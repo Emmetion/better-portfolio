@@ -20,7 +20,7 @@ const Introduction = () => {
     }, [isInView])
 
     return (
-        <div className="align-items-center justify-content-center d-flex fd-row vh-100 vw-10" style={{backgroundColor: "#AFDDE5"}}>
+        <div className="align-items-center justify-content-center d-flex fd-row vw-10" style={{backgroundColor: "#AFDDE5", height: "105vh"}}>
 
             {/* <motion.div
                 initial={{x: -300, opacity: 0.1}}
