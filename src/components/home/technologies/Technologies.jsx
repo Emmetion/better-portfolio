@@ -20,7 +20,7 @@ const experienced = [
         hoverText: "Java",
         yearsOfExperience: 3,
         description: "Java was the first programming languages I learned, and where I developed a fundamental grasp of programming itself.",
-        relatedSoftwares: "Spring Boot, JUnit, ",
+        relatedSoftwares: "Spring Boot, JUnit, Maven, ",
     },
     {
         imageSrc: SpringBoot,
@@ -35,7 +35,9 @@ const experienced = [
 const Technologies = () => {
 
     return (
-        <div className="d-block text-center vh-100 vw-100">
+        <div className="d-block text-center vh-100 vw-100" style={{
+            backgroundColor: "#AFDDE5"
+        }}>
             <FadeUp>
                 <div className="h1">
                     <p className="header-text pb-2 pt-5">Technologies</p>

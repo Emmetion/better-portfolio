@@ -24,16 +24,6 @@
     max-height: 50px;
 }
 
-.lang-item {
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 200px;
-    max-height: 200px;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-}
 
 .description {
     height: 200px;
