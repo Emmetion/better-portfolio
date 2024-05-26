@@ -1,0 +1,15 @@
+.header-text {
+    font-size: 50px;
+    width: 100%;
+}
+
+.body-text {
+    font-size: 18px;
+    width: 100%;
+    text-overflow: clip;
+
+}
+
+.emmet-pfp {
+    margin-left: 5vw;
+}
