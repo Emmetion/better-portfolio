@@ -46,22 +46,23 @@ const Icon = ({imageSrc, title, hoverText, yearsOfExperience, description, frame
                 <p>{description}</p>
             </div>
             <div style={{
-                fontSize: "16px"
+                fontSize: "16px",
+                alignItems: "flex-end"
             }} className="pl-2  ">
                 {/* Hideable */}
-                {
-                    frameworks !== "" && frameworks !== undefined ? 
-                        "Frameworks: " + frameworks : ""
-                }   
+                {/* {
+                    frameworks != [] && frameworks !== undefined ? 
+                        "Frameworks: " + frameworks.map(item => item.title) : ""
+                }    */}
+                 {
+                    frameworks != [] && frameworks !== undefined ? 
+                        "Click to view frameworks..." : ""
+                }
             </div>
             <div style={{
                 textAlign: "center",
-                alignSelf: "flex-end",
             }}> 
-                {
-                    frameworks !== "" && frameworks !== undefined ? 
-                        "Click to view frameworks..." : ""
-                }
+               
             </div>
 
         </motion.div>

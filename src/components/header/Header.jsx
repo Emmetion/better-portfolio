@@ -5,62 +5,45 @@ import { Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, NavbarText, 
 import { FaGithub, FaHome } from 'react-icons/fa';
 import { HiOutlineCode } from 'react-icons/hi';
 
+import './Header.css'
+
 function Header() {
-    const [isOpen, setIsOpen] = useState(false);
-  
-    const toggle = () => setIsOpen(!isOpen);
   
     return (
       <div>
-        <Navbar expand={true} fixed='top' style={{backgroundColor: "white"}}>
-          <NavbarBrand href="/">Emmet Spencer</NavbarBrand>
-          <NavbarToggler onClick={toggle} >ttt</NavbarToggler>
-          <Collapse isOpen={isOpen} navbar className="flexbar">
+        <Navbar expand={true} fixed='top' style={{backgroundColor: "white", color: "white"}}>
+          <NavbarBrand href="/" className="link">Emmet Spencer</NavbarBrand>
             <Nav className="me-auto" navbar>
               <NavItem className='centered-item '>
-                <NavLink href="/home/">
+                <NavLink href="/home/" className="link">
                   <FaHome />
                   {'  '}
                   Home
                 </NavLink>
               </NavItem>
               <NavItem className='centered-item '>
-                <NavLink href="/projects/">
+                <NavLink href="/projects/"  className="link">
                   <HiOutlineCode />
                   {'  '}
                   Projects
                 </NavLink>
               </NavItem>
               <NavItem className="centered-item">
-                <NavLink href="https://github.com/Emmetion">
+                <NavLink href="https://github.com/Emmetion" className="link">
                   <FaGithub />
                   {'  '}
                   GitHub
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/about/">About</NavLink>
+                <NavLink href="/about/"  className="link">About</NavLink>
               </NavItem>
-  
-              
-              {/* <UncontrolledDropdown nav inNavbar={true}>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
             </Nav>
-            <NavbarText>
-              <NavLink href="https://google.com">
+            <NavbarText className="ms-auto ">
+              <NavLink className="link" href="https://drive.google.com/file/d/1Sm8XceBqsT1B2fJGOyyP-1ssVjwtqioI/view?usp=drive_link">
               Resume
               </NavLink>
             </NavbarText>
-          </Collapse>
         </Navbar>
       </div>
     );
