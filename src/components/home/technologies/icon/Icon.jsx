@@ -1,19 +1,28 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "./Icon.css"
 
-
-const Icon = ({imageSrc, title, hoverText, yearsOfExperience, description, relatedSoftwares: frameworks}) => {
+const Icon = ({imageSrc, title, hoverText, yearsOfExperience, description, frameworks, color, onTechClick}) => {
     return (
         // Image with shadow background.
-        <div className="lang-item d-flex flex-column mr-2" style={{
-            backgroundColor: "#70c2d0"
-        }}>
+        <motion.div className="lang-item d-flex flex-column mr-2"
+            whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.3 },
+            }}
+            layout
+            onClick={e => onTechClick(title)}
+            style={{
+                backgroundColor: color
+            }}
+        >
             <div style={{
                 marginTop: "10px",
                 marginLeft: "10px",
                 textAlign: "left",
                 height: "60px",
+                transformOrigin: "center", // Ensuring the scale happens from the center
             }} className="d-flex">
                 {/*  Icon */}
                 <img src={imageSrc} title={hoverText} className="icon mr-2" style={{
@@ -41,13 +50,21 @@ const Icon = ({imageSrc, title, hoverText, yearsOfExperience, description, relat
             }} className="pl-2  ">
                 {/* Hideable */}
                 {
-                    frameworks !== "" ? 
+                    frameworks !== "" && frameworks !== undefined ? 
                         "Frameworks: " + frameworks : ""
                 }   
             </div>
+            <div style={{
+                textAlign: "center",
+                alignSelf: "flex-end",
+            }}> 
+                {
+                    frameworks !== "" && frameworks !== undefined ? 
+                        "Click to view frameworks..." : ""
+                }
+            </div>
 
-
-        </div>
+        </motion.div>
     )
 }
 
