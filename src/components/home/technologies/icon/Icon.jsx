@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import "./Icon.css"
 
-const Icon = ({imageSrc, title, hoverText, yearsOfExperience, description, frameworks, color, onTechClick}) => {
+const Icon = ({imageSrc, title, yearsOfExperience, description, frameworks, onTechClick, style, textColor}) => {
+
+    const [borderColor, setBorderColor] = useState('');
+
+    const onClick = () => {
+        if (onTechClick === undefined){return;}
+        onTechClick(title);
+        if (borderColor !== '') {
+            setBorderColor('green');
+        } else {
+            setBorderColor('blue');
+        }
+    }
     return (
         // Image with shadow background.
         <motion.div className="lang-item d-flex flex-column mr-2"
             whileHover={{
-                scale: 1.02,
+                scale: 1.06,
                 transition: { duration: 0.3 },
             }}
             layout
-            onClick={e => onTechClick(title)}
-            style={{
-                backgroundColor: color
-            }}
+            onClick={() => onClick()}
+            style={{...style, marginLeft: "10px"}}
         >
             <div style={{
                 marginTop: "10px",
@@ -25,7 +35,7 @@ const Icon = ({imageSrc, title, hoverText, yearsOfExperience, description, frame
                 transformOrigin: "center", // Ensuring the scale happens from the center
             }} className="d-flex">
                 {/*  Icon */}
-                <img src={imageSrc} title={hoverText} className="icon mr-2" style={{
+                <img src={imageSrc} title={title} alt={title} className="icon mr-2" style={{
                     width: "75px",
                     height: "75px",
                     borderRadius: "10px",
@@ -47,8 +57,8 @@ const Icon = ({imageSrc, title, hoverText, yearsOfExperience, description, frame
             </div>
             <div style={{
                 fontSize: "16px",
-                alignItems: "flex-end"
-            }} className="pl-2  ">
+                alignItems: "flex-end",
+            }} className="pl-2">
                 {/* Hideable */}
                 {/* {
                     frameworks != [] && frameworks !== undefined ? 
@@ -59,12 +69,6 @@ const Icon = ({imageSrc, title, hoverText, yearsOfExperience, description, frame
                         "Click to view frameworks..." : ""
                 }
             </div>
-            <div style={{
-                textAlign: "center",
-            }}> 
-               
-            </div>
-
         </motion.div>
     )
 }

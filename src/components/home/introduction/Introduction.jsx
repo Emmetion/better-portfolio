@@ -21,7 +21,7 @@ const Introduction = () => {
 
     return (
         <div>
-            <div className="align-items-center justify-content-center d-flex fd-row vw-10" style={{backgroundColor: "#AFDDE5", height: "105vh"}}>
+            <div className="align-items-center justify-content-center d-flex fd-row vw-10" style={{backgroundColor: "white", height: "105vh"}}>
 
                 {/* <motion.div
                     initial={{x: -300, opacity: 0.1}}
@@ -30,8 +30,8 @@ const Introduction = () => {
                 > */}
                 <SideFadeOut direction={-1}>
                     <span className="header-text">Hey There!</span>
-                    <p className="body-text" style={{marginBottom: "0px"}}>I'm Emmet, a passionate software developer pursueing</p>
-                    <p className="body-text"> a <b>Bachelors of Software Engineering</b> @{' '}
+                    <p className="body-text" style={{marginBottom: "0px"}}>I'm Emmet, a passionate software developer pursuing</p>
+                    <p className="body-text"> a <b>Bachelor of Science</b> in <b>Software Engineering</b> @{' '}
                         <motion.a 
                             whileHover={{
                                         backgroundColor: "#FFA500", 

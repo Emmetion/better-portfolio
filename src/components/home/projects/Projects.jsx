@@ -6,7 +6,7 @@ import HorizontalScroller from "./HorizontalScroller";
 const Projects = () => {
 
     return (
-        <div style={{width: "100%", height: "100vh", backgroundColor: "#AFDDE5"}}> 
+        <div style={{width: "100%", height: "100vh", backgroundColor: "white"}}> 
             <motion.div>
 
                 <motion.h1 style={{paddingTop: "1vh", textAlign: "center"}}>
