@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/better-portfolio/static/css/main.be0676d2.css",
-    "main.js": "/better-portfolio/static/js/main.0a6fea28.js",
+    "main.css": "/better-portfolio/static/css/main.38729784.css",
+    "main.js": "/better-portfolio/static/js/main.289d5254.js",
     "static/js/453.570a1e5f.chunk.js": "/better-portfolio/static/js/453.570a1e5f.chunk.js",
     "static/media/PostgreSQLIcon.png": "/better-portfolio/static/media/PostgreSQLIcon.feb2e00ce8ea923ac386.png",
     "static/media/STMBoard.png": "/better-portfolio/static/media/STMBoard.efba8d11f5478f4607b3.png",
@@ -20,12 +20,12 @@
     "static/media/STM32Icon.avif": "/better-portfolio/static/media/STM32Icon.f178c847df67d974257b.avif",
     "static/media/JavaScriptIcon.svg": "/better-portfolio/static/media/JavaScriptIcon.00f3e5cf8bcf4ae623b3835ca5791b15.svg",
     "index.html": "/better-portfolio/index.html",
-    "main.be0676d2.css.map": "/better-portfolio/static/css/main.be0676d2.css.map",
-    "main.0a6fea28.js.map": "/better-portfolio/static/js/main.0a6fea28.js.map",
+    "main.38729784.css.map": "/better-portfolio/static/css/main.38729784.css.map",
+    "main.289d5254.js.map": "/better-portfolio/static/js/main.289d5254.js.map",
     "453.570a1e5f.chunk.js.map": "/better-portfolio/static/js/453.570a1e5f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.be0676d2.css",
-    "static/js/main.0a6fea28.js"
+    "static/css/main.38729784.css",
+    "static/js/main.289d5254.js"
   ]
 }
