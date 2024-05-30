@@ -29,13 +29,11 @@ function Header() {
               <FaGithub className="mb-1"/>{' '}GitHub
             </NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink href="https://drive.google.com/file/d/1Sm8XceBqsT1B2fJGOyyP-1ssVjwtqioI/view?usp=drive_link" className="link">
-              <HiDocumentText className="mb-1"/>{' '}Resume
-            </NavLink>
-          </NavItem>
         </Nav>
       </Collapse>
+      <NavLink href="https://drive.google.com/file/d/1Sm8XceBqsT1B2fJGOyyP-1ssVjwtqioI/view?usp=drive_link" className="link">
+        <HiDocumentText className="mb-1"/>{' '}Resume
+      </NavLink>
     </Navbar>
   );
 }
