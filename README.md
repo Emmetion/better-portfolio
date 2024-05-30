@@ -11,5 +11,5 @@ Framework of Choice: React
 Libraries Utilized:
 - gh-pages
 - framer-motion
-- react-strap
+- reactstrap
 - react-icons

@@ -39,13 +39,12 @@ const Introduction = () => {
                                 color: "black",
                                 borderRadius: "10px",
                                 borderStyle: "solid",
-                                borderColor: "#AFDDE5",
+                                borderColor: "white",
                                 transition: "border-width 0s, border-width 0s, border-color 0s, background-color 0s" // Adding transition properties here
                             }}
                             transition={{
                                 backgroundColor: { duration: 0 },
                                 borderColor: { duration: 0 },
-                                // borderWidth: { duration: 0.3 }
                             }}
                             initial={{
                                 borderWidth: "0px"
