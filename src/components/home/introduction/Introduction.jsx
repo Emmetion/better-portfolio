@@ -22,16 +22,10 @@ const Introduction = () => {
     return (
         <div>
             <div className="align-items-center justify-content-center d-flex fd-row vw-10" style={{backgroundColor: "white", height: "105vh"}}>
-
-                {/* <motion.div
-                    initial={{x: -300, opacity: 0.1}}
-                    animate={{x: 0, opacity: 1}}
-                    transition={{duration: 0.5}}
-                > */}
                 <SideFadeOut direction={-1}>
                     <span className="header-text">Hey There!</span>
-                    <p className="body-text" style={{marginBottom: "0px"}}>I'm Emmet, a passionate software developer pursuing</p>
-                    <p className="body-text"> a <b>Bachelor of Science</b> in <b>Software Engineering</b> @{' '}
+                    <p className="body-text" style={{marginBottom: "0px"}}>I'm Emmet, a passionate software developer pursuing a </p>
+                    <p className="body-text"> <b>Bachelor of Science</b> in <b>Software Engineering</b> @{' '}
                         <motion.a 
                             whileHover={{
                                         backgroundColor: "#FFA500", 
@@ -72,7 +66,6 @@ const Introduction = () => {
                 {/* </motion.div> */}
                 <SideFadeOut direction={1}>
                     <motion.div
-                        initial={{x: 300, opacity: 0.1}}
                         animate={{x: 0, opacity: 1}}
                         transition={{duration: 0.5}}
                         whileHover={{scale: 1.1}}

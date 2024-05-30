@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import "./Icon.css"
 
 const Icon = ({imageSrc, title, yearsOfExperience, description, frameworks, onTechClick, style, textColor}) => {
 
-    const [borderColor, setBorderColor] = useState('');
+    const [showingFrameworks, setShowingFrameworks] = useState(false); // when the main icon is clicked, the frameworks will appear in a display below it.
+
+    useEffect(() => {
+
+    }, [showingFrameworks])
 
     const onClick = () => {
         if (onTechClick === undefined){return;}
         onTechClick(title);
-        if (borderColor !== '') {
-            setBorderColor('green');
-        } else {
-            setBorderColor('blue');
-        }
     }
     return (
         // Image with shadow background.
