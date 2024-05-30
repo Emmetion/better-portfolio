@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/better-portfolio/static/css/main.be0676d2.css",
+    "main.js": "/better-portfolio/static/js/main.0a6fea28.js",
+    "static/js/453.570a1e5f.chunk.js": "/better-portfolio/static/js/453.570a1e5f.chunk.js",
+    "static/media/PostgreSQLIcon.png": "/better-portfolio/static/media/PostgreSQLIcon.feb2e00ce8ea923ac386.png",
+    "static/media/STMBoard.png": "/better-portfolio/static/media/STMBoard.efba8d11f5478f4607b3.png",
+    "static/media/ReactIcon.png": "/better-portfolio/static/media/ReactIcon.8a6fc0a24a800d1e0f4a.png",
+    "static/media/PythonIcon.png": "/better-portfolio/static/media/PythonIcon.82efb64f8698a267f8bf.png",
+    "static/media/Emmet_Pfp.jpg": "/better-portfolio/static/media/Emmet_Pfp.8720d3fec3d73e9ae669.jpg",
+    "static/media/SQLIcon.png": "/better-portfolio/static/media/SQLIcon.26e07c0c18c63ac6bba3.png",
+    "static/media/RIT-Logo.png": "/better-portfolio/static/media/RIT-Logo.83daf1d635a227050d55.png",
+    "static/media/JUnit5.png": "/better-portfolio/static/media/JUnit5.b0f15c326ffaab65f4bc.png",
+    "static/media/AngularIcon.png": "/better-portfolio/static/media/AngularIcon.8736a5445ef0c218dbb1.png",
+    "static/media/CIcon.png": "/better-portfolio/static/media/CIcon.d083731589e745941c43.png",
+    "static/media/MySQLIcon.png": "/better-portfolio/static/media/MySQLIcon.7d8d571e5629923eaf74.png",
+    "static/media/SpringBoot.png": "/better-portfolio/static/media/SpringBoot.ec44fdc3f6d962fb8e3f.png",
+    "static/media/JavaIcon.webp": "/better-portfolio/static/media/JavaIcon.5b1130dba5d30b1f0261.webp",
+    "static/media/logo.svg": "/better-portfolio/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/STM32Icon.avif": "/better-portfolio/static/media/STM32Icon.f178c847df67d974257b.avif",
+    "static/media/JavaScriptIcon.svg": "/better-portfolio/static/media/JavaScriptIcon.00f3e5cf8bcf4ae623b3835ca5791b15.svg",
+    "index.html": "/better-portfolio/index.html",
+    "main.be0676d2.css.map": "/better-portfolio/static/css/main.be0676d2.css.map",
+    "main.0a6fea28.js.map": "/better-portfolio/static/js/main.0a6fea28.js.map",
+    "453.570a1e5f.chunk.js.map": "/better-portfolio/static/js/453.570a1e5f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be0676d2.css",
+    "static/js/main.0a6fea28.js"
+  ]
+}
