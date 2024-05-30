@@ -12,7 +12,7 @@ function Header() {
         <NavbarBrand href="/" className="link">
           <b>Emmet Spencer</b>
         </NavbarBrand>
-        <Nav className="ms-auto" navbar>
+        <Nav className="ms-auto">
           <NavItem>
             <NavLink href="/projects/" className="link" disabled>
               <FaLinkedin className="mb-1" />{' '}LinkedIn
