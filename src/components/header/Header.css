@@ -3,3 +3,27 @@
     font-weight: 500;
     
 }
+
+.custom-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.custom-navbar .navbar-collapse {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.custom-navbar .nav {
+  display: flex !important; /* Ensure flex display */
+  flex-direction: row; /* Align items horizontally */
+  align-items: center;
+}
+
+.custom-navbar .nav-item {
+  margin-left: 15px;
+}
