@@ -178,14 +178,14 @@ const Technologies = () => {
                     <p className="header-text pb-2 pt-5 justify-content-center"><FaComputer className="pb-2"/> Technologies</p>
                 </div>
             </FadeUp>
-            <SideFadeOut direction={-1}>
+            <FadeUp direction={-1}>
 
                 <div className="body-text w-100">
-                    <p className="mb-0">During my time as a programmer, I've developed many strong skills</p>
+                    <p className="mb-0">Over the course of my career, I've developed many strong skills</p>
                     <p className="mb-0">in various programming lanauges, softwares, and frameworks alike.</p>
-                    <p className="mb-0">Here I'll highlight my strongest and weakest of each.</p>
+                    <p className="mb-0">Here I'll highlight some of my greatest experiences.</p>
                 </div> 
-            </SideFadeOut>           
+            </FadeUp>           
             <div className="mt-5 text-left ml-5 h1">
                 <p className="h2">Languages</p>    
                 <motion.div className="icons fd-row d-flex" layout>

@@ -4,7 +4,7 @@ import { useInView, useAnimate, MotionConfig, DragControls, useAnimation } from 
 
 const FadeUp = ({children}) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, {once: false}); // Requires 100px to be in view before displaying.
+    const isInView = useInView(ref, {margin: "0px 0px -100px", once: true})
     const controls = useAnimation();
     
     useEffect(() => {

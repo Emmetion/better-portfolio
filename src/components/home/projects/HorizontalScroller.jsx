@@ -2,7 +2,7 @@ import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react"
 import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle } from "reactstrap";
 import STMBoardImage from '../../../assets/STMBoard.png'
-
+import { motion } from "framer-motion";
 const Item = ({imageSrc, title, subtitle, description, techUsed}) => {
     return (
         <Card
@@ -55,24 +55,28 @@ const projects = [
 
     }
 ]
-
 const HorizontalScroller = () => {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll( {target: ref} )
-
+    const targetRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+      target: targetRef,
+    });
+  
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
-
+    
     return (
-        <section ref={ref} className="relative h-[300vh] bg-neutral-900">
-            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <div className="flex gap-4">
-                    {projects.map(proj => {
-                        <Item imageSrc={proj.image}/>
-                    })}
-                </div>
-            </div>
+        <section ref={targetRef} className="relative h-screen bg-neutral-900 overflow-hidden">
+          <div className="sticky top-0 flex items-center">
+            <motion.div style={{ x }} className="flex gap-4">
+              <div className="item"></div>
+              <div className="item"></div>
+              <div className="item"></div>
+              <div className="item"></div>
+              <div className="item"></div>
+              <div className="item"></div>
+            </motion.div>
+          </div>
         </section>
-    )
-}
+      );
+};
 
 export default HorizontalScroller;

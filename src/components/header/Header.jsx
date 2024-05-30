@@ -20,12 +20,12 @@ function Header() {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ms-auto" navbar>
           <NavItem>
-            <NavLink href="https://www.linkedin.com/in/emmet-spencer/" className="link">
+            <NavLink target="_blank" href="https://www.linkedin.com/in/emmet-spencer/" className="link">
               <FaLinkedin className="mb-1" />{' '}LinkedIn
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="https://github.com/Emmetion" className="link">
+            <NavLink target="_blank" href="https://github.com/Emmetion" className="link">
               <FaGithub className="mb-1"/>{' '}GitHub
             </NavLink>
           </NavItem>
