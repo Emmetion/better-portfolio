@@ -2,23 +2,27 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView, useAnimate, MotionConfig, DragControls, useAnimation } from "framer-motion";
 
-const FadeUp = ({children}) => {
+const FadeUp = ({children, bottomMargin, delay, started, setStarted}) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, {margin: "0px 0px -100px", once: true})
+    const isInView = useInView(ref, {margin: bottomMargin != undefined ? "0px 0px " + bottomMargin : "", once: true})
     const controls = useAnimation();
     
     useEffect(() => {
-        if (isInView) {
-          controls.start('visible')
+        if (isInView || started) {
+            controls.start('visible')
+            if (setStarted != undefined && started == false) {
+                setStarted(true);
+            }
         } else {
+            console.log("hidden")
           controls.start('hidden')
         }
-    }, [isInView]); // Observe the ref on change
+    }, [isInView, controls, started, setStarted]); 
 
     const variants = {
         visible: {
             opacity: 1,
-            y: 0
+            y: 0,
         },
         hidden: {
             opacity: 0,
@@ -31,7 +35,8 @@ const FadeUp = ({children}) => {
             ref={ref}
             variants={variants}
             initial="hidden"
-            animate={controls}>
+            animate={controls}
+            transition={{delay: delay}}>
             {children}
         </motion.div>
     )

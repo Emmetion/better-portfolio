@@ -4,14 +4,16 @@ import { frame, m, useAnimate, useAnimation, useScroll } from "framer-motion";
 import './Technologies.css'
 
 import FadeUp from "../projects/FadeUp";
-import SideFadeOut from "../introduction/SideFadeOut";
 
 // Icon image imports.
 import JavaIcon from '../../../assets/technologies/JavaIcon.webp'
 import SpringBoot from '../../../assets/technologies/SpringBoot.png'
 import JUnitIcon from '../../../assets/technologies/JUnit5.png'
+import JacksonIcon from '../../../assets/technologies/JacksonIcon.webp'
+import MavenIcon from '../../../assets/technologies/MavenIcon.svg'
 import PythonIcon from '../../../assets/technologies/PythonIcon.png'
 import FlaskIcon from '../../../assets/technologies/FlaskIcon.png'
+import MatPlotLibIcon from '../../../assets/technologies/MatPlotLibIcon.png'
 import HTMLCSSIcon from '../../../assets/technologies/HTMLandCSSIcon.png'
 import BootstrapIcon from '../../../assets/technologies/BootstrapIcon.png'
 import JavaScriptIcon from '../../../assets/technologies/JavaScriptIcon.svg'
@@ -42,15 +44,18 @@ const languages = [
                 title: "Spring Boot",
                 yearsOfExperience: "~1 Year",
                 description: "Used in projects for managing CRUD operations as well as Spring Data JPA for database management.",
-                relatedSoftwares: ""
             }, 
             {
                 imageSrc: JUnitIcon,
                 title: "JUnit 5",
                 yearsOfExperience: "~1 Year",
                 description: "Used in various projects of mine to cover Unit-Testing. Along with this application I frequently use Jacoco to analyze my code coverage.",
-                relatedSoftwares: "",   
-        
+            },
+            {
+                imageSrc: JacksonIcon,
+                title: "Jackson",
+                yearsOfExperience: "~3 Months",
+                description: "Various mini-projects from both University and Personal projects utilized this library as a file-storage database."
             }
         ]
     },
@@ -64,6 +69,11 @@ const languages = [
             title: "Flask",
             yearsOfExperience: "~1/2 Year",
             description: "Used in various applications to develop CRUD Applications."
+        },{
+            imageSrc: MatPlotLibIcon,
+            title: "MatPlotLib",
+            yearsOfExperience: "~1/4 Year",
+            description: "Utilized in University classes for data analysis. Limited experience but gathered solid understanding of how powerful Python is."
         }]
     },
     {
@@ -74,7 +84,8 @@ const languages = [
         frameworks: [{
             imageSrc: BootstrapIcon,
             title: "Bootstrap",
-            yearsOfExperience: "2 Months"
+            yearsOfExperience: "2 Months",
+            description: "Utilized in the development of this website, in conjunction with react-strap.",
         }]
     },
     {
@@ -106,7 +117,7 @@ const languages = [
             imageSrc: STM32Icon,
             title: "STM32 ",
             yearsOfExperience: "~1/2 Year",
-            description: "Created a MicroController application that acted as a basic Mini-Player for  "
+            description: "Created a MicroController application that acted as a basic audio Mini-Player. Providing controls for both a remote and physical user. See projects below. "
         }]
     },
     {
@@ -122,7 +133,8 @@ const languages = [
         },{
             imageSrc: MySQLIcon,
             title: "MySQL",
-            yearsOfExperience: "1 Year"
+            yearsOfExperience: "1 Year",
+            description: ""
         }]
     }
 ]
@@ -130,6 +142,7 @@ const languages = [
 const Technologies = () => {
     const [frameworks, setFrameworks] = useState([])
     const [title, setTitle] = useState('');
+    const [started, setStarted] = useState(false)
 
     const controls = useAnimation()
 
@@ -171,6 +184,8 @@ const Technologies = () => {
         }
     }
 
+    let langCount = 0;
+
     return (
         <div className="d-block text-center" style={{
             backgroundColor: "#E7E7E7",
@@ -178,51 +193,29 @@ const Technologies = () => {
             minHeight: "100vh",
             width: "100%"
         }}>
-            <FadeUp>
+            <FadeUp bottomMargin="-50px">
                 <div className="h1">
                     <p className="header-text pb-2 pt-5 justify-content-center"><FaComputer className="pb-2"/> Technologies</p>
                 </div>
             </FadeUp>
-            <FadeUp direction={-1}>
+            <FadeUp bottomMargin="-50px" direction={-1}>
                 <div className="body-text w-100">
                     <p className="mb-0">Over the course of my career, I've developed many strong skills</p>
                     <p className="mb-0">in various programming lanauges, softwares, and frameworks alike.</p>
                     <p className="mb-0">Here I'll highlight some of my greatest experiences.</p>
                 </div> 
-            </FadeUp>           
+            </FadeUp >           
             <div className="mt-5 text-left ml-5 h1">
-                    
                 <div className="grid-container justify-content-center">
-                    { languages.map(lang => <Lang lang={lang} key={lang.title}/>) }
+                    { languages.map(lang => {
+                        langCount++;
+                        return (
+                        <FadeUp bottomMargin={"0px"} setStarted={setStarted} started={started} delay={langCount * 0.2}>
+                            <Lang lang={lang} key={lang.title}/>
+                        </FadeUp>
+                        )
+                    }) }
                 </div>
-                {/* <motion.div className="icons fd-row d-flex" layout>
-                    {languages.map(({imageSrc, title, hoverText, yearsOfExperience, description, frameworks}, index) => 
-                        <Icon key={index} imageSrc={imageSrc} title={title} hoverText={hoverText} yearsOfExperience={yearsOfExperience} description={description} frameworksText={true} 
-                            onTechClick={onTechClick} style={{borderColor: "#6ca0dc", borderWidth: "4px"}} />
-                    )}
-                </motion.div>
-                <motion.div
-                    variants={variants}
-                    initial="closed"
-                    style={{
-                        height: "300px",
-                        width: "100%",
-                        display: "flex",
-                        flex: "row",
-                        alignItems: "center",
-                        justifyContent: "center"
-                        
-                    }}
-                    transition={{
-                        opacity: 0.3
-                    }}
-                    animate={controls}
-                    layout>
-                    { frameworks != [] && frameworks !== undefined ? frameworks.map(({imageSrc, title, hoverText, yearsOfExperience, description, relatedSoftwares}, index) => 
-                        <Icon key={index} imageSrc={imageSrc} title={title} hoverText={hoverText} yearsOfExperience={yearsOfExperience} description={description} relatedSoftwares={relatedSoftwares}
-                        style={{borderColor: "#6ca0dc", borderWidth: "2px"}} />
-                    ) : <></>}
-                </motion.div> */}
             </div>
         </div>
     )

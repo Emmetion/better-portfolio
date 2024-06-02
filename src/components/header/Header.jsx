@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Collapse, Button, NavbarToggler } from "reactstrap";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiDocumentText } from "react-icons/hi";
+import { FaCodepen, FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiCode, HiDocumentText } from "react-icons/hi";
 
 import "./Header.css";
+import { FaCodeBranch, FaCodeMerge } from "react-icons/fa6";
 
 function Header() {
 
@@ -36,6 +37,9 @@ function Header() {
           </NavItem>
         </Nav>
       </Collapse>
+      <NavLink target="_blank" href="https://github.com/Emmetion/better-portfolio" className="link">
+        <HiCode className="mb-1"/>{' '}Code
+      </NavLink>
     </Navbar>
   );
 }

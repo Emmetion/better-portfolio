@@ -27,18 +27,23 @@ const Lang = ({lang}) => {
             height: "250px",
         },
         showingOne: {
-            height: "450px", // Adjusted height for 1 framework
+            height: "450px",
         },
         showingTwo: {
-            height: "670px", // Adjusted height for 2 frameworks
+            height: "670px", 
         },
+        showingThree: {
+            height: "890px"
+        }
     }
 
     const getContainerVariant = () => {
         if (lang.frameworks.length === 1) {
             return "showingOne";
-        } else if (lang.frameworks.length >= 2) {
+        } else if (lang.frameworks.length == 2) {
             return "showingTwo";
+        } else if (lang.frameworks.length >= 3) {
+            return "showingThree";
         } else {
             return "hidden";
         }
@@ -47,7 +52,8 @@ const Lang = ({lang}) => {
     const frameworkVariants = {
         hidden: { y: "-120px", opacity: 0, transition: { type: "tween", duration: 0.3 } },
         showingOne: { y: "0px", opacity: 1, transition: { type: "tween", duration: 0.7 } },
-        showingTwo: { y: "0px", opacity: 1, transition: { type: "tween", duration: 0.7 } }
+        showingTwo: { y: "0px", opacity: 1, transition: { type: "tween", duration: 0.7 } },
+        showingThree: { y: "0px", opacity: 1, transition: { type: "tween", duration: 0.7 } }
     }
 
     return (

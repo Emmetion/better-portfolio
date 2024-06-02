@@ -19,7 +19,7 @@ export default function Introduction() {
     return (
         <div>
             <div className="align-items-center justify-content-center d-flex fd-row vw-10" style={{backgroundColor: "white", height: "105vh"}}>
-                <SideFadeOut direction={-1}>
+                <SideFadeOut amount={.6} direction={-1}>
                     <div style={{minWidth: "480px"}}>
                         <span className="header-text">Hey There!</span>
                         <p className="body-text" style={{marginBottom: "0px"}}>I'm Emmet, a passionate software developer pursuing a </p>
@@ -50,8 +50,6 @@ export default function Introduction() {
                                 exit={{
                                     borderWidth: "0px",
                                     borderStyle: "none",
-                                    
-                                    // borderStyle: "none"
                                 }}
                                 href="http://rit.edu"
                                 target="_blank">
@@ -62,8 +60,7 @@ export default function Introduction() {
                         <p className="body-text">and other stuff I've made over my software journey.</p>
                     </div>
                 </SideFadeOut>
-                {/* </motion.div> */}
-                <SideFadeOut direction={1}>
+                <SideFadeOut amount={.6} direction={1}>
                     <motion.div
                         animate={{x: 0, opacity: 1}}
                         transition={{duration: 0.5}}

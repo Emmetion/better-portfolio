@@ -5,7 +5,6 @@ import "./Icon.css"
 
 const Icon = ({imageSrc, title, yearsOfExperience, description, style, onClick, primary, isOpen}) => {
     return (
-        // Image with shadow background.
         <div>
             <motion.div className="lang-item d-flex flex-column mr-2"
                 layout
@@ -26,7 +25,7 @@ const Icon = ({imageSrc, title, yearsOfExperience, description, style, onClick, 
                     marginLeft: "10px",
                     textAlign: "left",
                     height: "60px",
-                    transformOrigin: "center", // Ensuring the scale happens from the center
+                    transformOrigin: "center"
                 }} className="d-flex">
                     {/*  Icon */}
                     <img src={imageSrc} title={title} alt={title} className="icon mr-2" style={{
@@ -41,7 +40,7 @@ const Icon = ({imageSrc, title, yearsOfExperience, description, style, onClick, 
                         <p className="h3 pt-0 mb-0 fs-12">{title}</p>
                         <p style={{
                             fontSize: "12px"
-                        }}>{yearsOfExperience} of experience</p>
+                        }}>{yearsOfExperience} of Experience</p>
                     </div>
                 </div>
                 <div style={{

@@ -1,9 +1,9 @@
 import { MotionConfig, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion";
-const SideFadeOut = ({children, direction, style}) => {
+const SideFadeOut = ({children, amount, direction, style}) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: .6, once: false}) // 70% in view = INVIEW
+    const isInView = useInView(ref, { amount: amount, once: false})
 
     const controls = useAnimation();
     const variants = {
