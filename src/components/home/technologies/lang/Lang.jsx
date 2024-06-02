@@ -30,7 +30,7 @@ const Lang = ({lang}) => {
             height: "450px", // Adjusted height for 1 framework
         },
         showingTwo: {
-            height: "700px", // Adjusted height for 2 frameworks
+            height: "670px", // Adjusted height for 2 frameworks
         },
     }
 
