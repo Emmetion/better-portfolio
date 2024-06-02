@@ -27,3 +27,22 @@
 .custom-navbar .nav-item {
   margin-left: 15px;
 }
+
+
+@media (max-width: 767px) {
+  .navbar-expand-md .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-expand-md .navbar-collapse {
+    display: none !important;
+  }
+
+  .navbar-expand-md .navbar-collapse.show {
+    display: block !important;
+  }
+
+  .ms-auto {
+    margin-left: auto !important;
+  }
+}

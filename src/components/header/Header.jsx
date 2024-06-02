@@ -7,7 +7,7 @@ import "./Header.css";
 
 function Header() {
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -16,12 +16,12 @@ function Header() {
       <NavbarBrand href="/" className="me-auto link">
         <b>Emmet Spencer</b>
       </NavbarBrand>
-      <NavbarToggler onClick={toggle} />
+      <NavbarToggler onClick={toggle}/>
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ms-auto" navbar>
           <NavItem>
             <NavLink target="_blank" href="https://www.linkedin.com/in/emmet-spencer/" className="link">
-              <FaLinkedin className="mb-1" />{' '}LinkedIn
+              <FaLinkedin className="mb-1"/>{' '}LinkedIn
             </NavLink>
           </NavItem>
           <NavItem>
@@ -29,11 +29,13 @@ function Header() {
               <FaGithub className="mb-1"/>{' '}GitHub
             </NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink target="_blank" href="https://drive.google.com/file/d/1Sm8XceBqsT1B2fJGOyyP-1ssVjwtqioI/view?usp=drive_link" className="link">
+              <HiDocumentText className="mb-1"/>{' '}Resume
+            </NavLink>
+          </NavItem>
         </Nav>
       </Collapse>
-      <NavLink href="https://drive.google.com/file/d/1Sm8XceBqsT1B2fJGOyyP-1ssVjwtqioI/view?usp=drive_link" className="link">
-        <HiDocumentText className="mb-1"/>{' '}Resume
-      </NavLink>
     </Navbar>
   );
 }

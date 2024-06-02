@@ -13,8 +13,8 @@ const FadeUp = ({children}) => {
         } else {
           controls.start('hidden')
         }
-      }, [isInView]); // Observe the ref on change
-    console.log(isInView)
+    }, [isInView]); // Observe the ref on change
+
     const variants = {
         visible: {
             opacity: 1,

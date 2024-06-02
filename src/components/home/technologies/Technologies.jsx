@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { frame, m, useAnimate, useAnimation, useScroll } from "framer-motion";
 
 import './Technologies.css'
@@ -12,6 +12,8 @@ import SpringBoot from '../../../assets/technologies/SpringBoot.png'
 import JUnitIcon from '../../../assets/technologies/JUnit5.png'
 import PythonIcon from '../../../assets/technologies/PythonIcon.png'
 import FlaskIcon from '../../../assets/technologies/FlaskIcon.png'
+import HTMLCSSIcon from '../../../assets/technologies/HTMLandCSSIcon.png'
+import BootstrapIcon from '../../../assets/technologies/BootstrapIcon.png'
 import JavaScriptIcon from '../../../assets/technologies/JavaScriptIcon.svg'
 import ReactIcon from '../../../assets/technologies/ReactIcon.png'
 import AngularIcon from '../../../assets/technologies/AngularIcon.png'
@@ -26,25 +28,26 @@ import { FaComputer } from "react-icons/fa6";
 import Icon from "./icon/Icon";
 import React from "react";
 import { motion } from "framer-motion";
+import Lang from './lang/Lang'
 
 const languages = [
     {
         imageSrc: JavaIcon,
         title: "Java",
-        yearsOfExperience: 3,
+        yearsOfExperience: "3 Years",
         description: "Java was the first programming languages I learned, and where I developed a fundamental grasp of programming itself.",
         frameworks: [
             {
                 imageSrc: SpringBoot,
                 title: "Spring Boot",
-                yearsOfExperience: "~1",
+                yearsOfExperience: "~1 Year",
                 description: "Used in projects for managing CRUD operations as well as Spring Data JPA for database management.",
                 relatedSoftwares: ""
             }, 
             {
                 imageSrc: JUnitIcon,
                 title: "JUnit 5",
-                yearsOfExperience: "~1",
+                yearsOfExperience: "~1 Year",
                 description: "Used in various projects of mine to cover Unit-Testing. Along with this application I frequently use Jacoco to analyze my code coverage.",
                 relatedSoftwares: "",   
         
@@ -54,31 +57,42 @@ const languages = [
     {
         imageSrc: PythonIcon,
         title: "Python",
-        yearsOfExperience: 3,
+        yearsOfExperience: "3 Years",
         description: "I've used python in many different ways. Most often I would use to create CRUD methods to manage a database, but I've also used",
         frameworks: [{
             imageSrc: FlaskIcon,
             title: "Flask",
-            yearsOfExperience: "~1/2",
+            yearsOfExperience: "~1/2 Year",
             description: "Used in various applications to develop CRUD Applications."
+        }]
+    },
+    {
+        imageSrc: HTMLCSSIcon,
+        title: "HTML & CSS",
+        yearsOfExperience: "~2 Years",
+        description: "Made several front-end end applications with using various libraries.",
+        frameworks: [{
+            imageSrc: BootstrapIcon,
+            title: "Bootstrap",
+            yearsOfExperience: "2 Months"
         }]
     },
     {
         imageSrc: JavaScriptIcon,
         title: "JavaScript",
-        yearsOfExperience: "~1",
+        yearsOfExperience: "~1 Year",
         description: "Used in many projects of mine, mostly for front-end development. Developed Discord-bots with it, and many front-end interfaces.",
         frameworks: [
             {
                 imageSrc: AngularIcon,
                 title: "AngularJS",
-                yearsOfExperience: "~1/2",
+                yearsOfExperience: "~1/2 Year",
                 description: "Developed several front-end applications with this software, combined with SpringBoot in some of my university projects."
             },
             {
                 imageSrc: ReactIcon,
                 title: "React",
-                yearsOfExperience: "~1/2",
+                yearsOfExperience: "~1/2 Year",
                 description: "Used to develop this portfolio website, and some practice apps. Also used throughout some of my university projects."
             }
         ]
@@ -86,58 +100,50 @@ const languages = [
     {
         imageSrc: CIcon,
         title: "C",
-        yearsOfExperience: "~1",
+        yearsOfExperience: "~1 Year",
         description: "Used to develop STM board applications, and experimented with it for use in Windows applications.",
         frameworks: [{
             imageSrc: STM32Icon,
-            title: "STM32 MicroController",
-            yearsOfExperience: "~1/2",
-            description: "Created a MicroController application with basic ability to play songs and "
+            title: "STM32 ",
+            yearsOfExperience: "~1/2 Year",
+            description: "Created a MicroController application that acted as a basic Mini-Player for  "
         }]
     },
     {
         imageSrc: SQLIcon,
         title: "SQL",
-        yearsOfExperience: ">1",
+        yearsOfExperience: ">1 Year",
         description: "My favored database methodology. Used in various projects of mine as a database layer.",
         frameworks: [{
             imageSrc: PostgresSQLIcon,
             title: "PostgreSQL",
-            yearsOfExperience: "~1/2",
+            yearsOfExperience: "~1/2 Year",
             description: "Used in a couple of projects, majority of which being university projects. Also used in hackathon project."
         },{
             imageSrc: MySQLIcon,
             title: "MySQL",
-            yearsOfExperience: ""
+            yearsOfExperience: "1 Year"
         }]
     }
 ]
 
 const Technologies = () => {
-
-    const [frameworks, setFrameworks] = useState([]);
+    const [frameworks, setFrameworks] = useState([])
     const [title, setTitle] = useState('');
-    const [inAnimation, setInAnimation] = useState(false);
 
     const controls = useAnimation()
 
-    const onTechClick = (e) => {
+    const onTechClick = async (e) => {
         if (title === e) {
             return;
         }
         setTitle(e);
         let tempFrame = languages.find(item => item.title === e)?.frameworks || []; // New list of Frameworks.
-        controls.start('exit').then(() => {
-            setFrameworks(tempFrame);
-            controls.start('reset').then(() => {
-                controls.start('open');
-            })
-            console.log("EXITED")
-            console.log("CLOSED")
-        })
+        await console.start('exit');
+        setFrameworks(tempFrame);
+        await controls.start('reset');
+        await controls.start('open');
     }
-
-
 
     const variants = {
         open: {
@@ -165,13 +171,12 @@ const Technologies = () => {
         }
     }
 
-
-    
-
     return (
-        <div className="d-block text-center vh-100 vw-100" style={{
-            backgroundColor: "#E7E7E7"
-            // backgroundColor: "#C3C6Bf"
+        <div className="d-block text-center" style={{
+            backgroundColor: "#E7E7E7",
+            maxHeight: "800vh",
+            minHeight: "100vh",
+            width: "100%"
         }}>
             <FadeUp>
                 <div className="h1">
@@ -179,7 +184,6 @@ const Technologies = () => {
                 </div>
             </FadeUp>
             <FadeUp direction={-1}>
-
                 <div className="body-text w-100">
                     <p className="mb-0">Over the course of my career, I've developed many strong skills</p>
                     <p className="mb-0">in various programming lanauges, softwares, and frameworks alike.</p>
@@ -187,10 +191,13 @@ const Technologies = () => {
                 </div> 
             </FadeUp>           
             <div className="mt-5 text-left ml-5 h1">
-                <p className="h2">Languages</p>    
-                <motion.div className="icons fd-row d-flex" layout>
+                    
+                <div className="grid-container justify-content-center">
+                    { languages.map(lang => <Lang lang={lang} key={lang.title}/>) }
+                </div>
+                {/* <motion.div className="icons fd-row d-flex" layout>
                     {languages.map(({imageSrc, title, hoverText, yearsOfExperience, description, frameworks}, index) => 
-                        <Icon key={index} imageSrc={imageSrc} title={title} hoverText={hoverText} yearsOfExperience={yearsOfExperience} description={description} frameworks={frameworks} 
+                        <Icon key={index} imageSrc={imageSrc} title={title} hoverText={hoverText} yearsOfExperience={yearsOfExperience} description={description} frameworksText={true} 
                             onTechClick={onTechClick} style={{borderColor: "#6ca0dc", borderWidth: "4px"}} />
                     )}
                 </motion.div>
@@ -215,7 +222,7 @@ const Technologies = () => {
                         <Icon key={index} imageSrc={imageSrc} title={title} hoverText={hoverText} yearsOfExperience={yearsOfExperience} description={description} relatedSoftwares={relatedSoftwares}
                         style={{borderColor: "#6ca0dc", borderWidth: "2px"}} />
                     ) : <></>}
-                </motion.div>
+                </motion.div> */}
             </div>
         </div>
     )

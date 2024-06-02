@@ -13,3 +13,22 @@
 .emmet-pfp {
     margin-left: 5vw;
 }
+
+/* Hide profile picture and adjust text on mobile views */
+@media (max-width: 768px) {
+    .emmet-pfp {
+        display: none;
+    }
+
+    .text-container {
+        text-align: center;
+    }
+
+    .text-container > div {
+        margin: 0 auto;
+    }
+
+    div {
+        min-width: none;
+    }
+}
