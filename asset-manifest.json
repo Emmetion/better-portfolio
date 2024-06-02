@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/better-portfolio/static/css/main.dd3b51c9.css",
-    "main.js": "/better-portfolio/static/js/main.35fbc106.js",
+    "main.js": "/better-portfolio/static/js/main.1523f4d6.js",
     "static/js/453.570a1e5f.chunk.js": "/better-portfolio/static/js/453.570a1e5f.chunk.js",
     "static/media/PostgreSQLIcon.png": "/better-portfolio/static/media/PostgreSQLIcon.feb2e00ce8ea923ac386.png",
     "static/media/ReactIcon.png": "/better-portfolio/static/media/ReactIcon.8a6fc0a24a800d1e0f4a.png",
@@ -22,11 +22,11 @@
     "static/media/JavaScriptIcon.svg": "/better-portfolio/static/media/JavaScriptIcon.00f3e5cf8bcf4ae623b3835ca5791b15.svg",
     "index.html": "/better-portfolio/index.html",
     "main.dd3b51c9.css.map": "/better-portfolio/static/css/main.dd3b51c9.css.map",
-    "main.35fbc106.js.map": "/better-portfolio/static/js/main.35fbc106.js.map",
+    "main.1523f4d6.js.map": "/better-portfolio/static/js/main.1523f4d6.js.map",
     "453.570a1e5f.chunk.js.map": "/better-portfolio/static/js/453.570a1e5f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dd3b51c9.css",
-    "static/js/main.35fbc106.js"
+    "static/js/main.1523f4d6.js"
   ]
 }
