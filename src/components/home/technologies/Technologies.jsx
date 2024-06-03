@@ -3,13 +3,12 @@ import { frame, m, useAnimate, useAnimation, useScroll } from "framer-motion";
 
 import './Technologies.css'
 
-import FadeUp from "../projects/FadeUp";
+import FadeUp from "../FadeUp";
 
 // Icon image imports.
 import JavaIcon from '../../../assets/technologies/JavaIcon.webp'
 import SpringBoot from '../../../assets/technologies/SpringBoot.png'
 import JUnitIcon from '../../../assets/technologies/JUnit5.png'
-import JacksonIcon from '../../../assets/technologies/JacksonIcon.webp'
 import MavenIcon from '../../../assets/technologies/MavenIcon.svg'
 import PythonIcon from '../../../assets/technologies/PythonIcon.png'
 import FlaskIcon from '../../../assets/technologies/FlaskIcon.png'
@@ -24,6 +23,11 @@ import STM32Icon from '../../../assets/technologies/STM32Icon.avif'
 import SQLIcon from '../../../assets/technologies/SQLIcon.png'
 import PostgresSQLIcon from '../../../assets/technologies/PostgreSQLIcon.png'
 import MySQLIcon from '../../../assets/technologies/MySQLIcon.png'
+
+import FileIcon from '../../../assets/technologies/FileIcon.png'
+import JacksonIcon from '../../../assets/technologies/JacksonIcon.webp'
+import CSVIcon from '../../../assets/technologies/CSVIcon.png'
+
 
 import { FaComputer } from "react-icons/fa6";
 
@@ -51,12 +55,6 @@ const languages = [
                 yearsOfExperience: "~1 Year",
                 description: "Used in various projects of mine to cover Unit-Testing. Along with this application I frequently use Jacoco to analyze my code coverage.",
             },
-            {
-                imageSrc: JacksonIcon,
-                title: "Jackson",
-                yearsOfExperience: "~3 Months",
-                description: "Various mini-projects from both University and Personal projects utilized this library as a file-storage database."
-            }
         ]
     },
     {
@@ -136,6 +134,25 @@ const languages = [
             yearsOfExperience: "1 Year",
             description: ""
         }]
+    },{
+        imageSrc: FileIcon,
+        title: "File Formats",
+        yearsOfExperience: "Many Years",
+        description: "Almost all my projects involved many types of file formats. Here I highlight some major data storing formats.",
+        frameworks: [
+            {
+                imageSrc: JacksonIcon,
+                title: "Jackson",
+                yearsOfExperience: "~3 Months",
+                description: "Various mini-projects from both University and Personal projects utilized this library as a file-storage database."
+            },
+            {
+                imageSrc: CSVIcon,
+                title: "CSV",
+                yearsOfExperience: "~1 Year",
+                description: "Used in various data-analytic projects."
+            }
+        ]
     }
 ]
 

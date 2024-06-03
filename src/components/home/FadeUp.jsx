@@ -18,6 +18,12 @@ const FadeUp = ({children, bottomMargin, delay, started, setStarted}) => {
           controls.start('hidden')
         }
     }, [isInView, controls, started, setStarted]); 
+    
+    useEffect(() => {
+        if (started) {
+            controls.start("visible");
+        }
+    }, [started]);
 
     const variants = {
         visible: {

@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 
-import FadeUp from './FadeUp'
+import FadeUp from '../FadeUp'
 
-const Projects = () => {
+
+export default function Projects() {
 
     return (
         <div style={{width: "100%", height: "100vh", backgroundColor: "white"}}> 
@@ -11,6 +12,4 @@ const Projects = () => {
             </motion.h1>
         </div>
     )
-}
-
-export default Projects;
+};
