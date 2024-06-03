@@ -40,3 +40,10 @@
     flex-basis: 25%;
     box-sizing: border-box;
 }
+
+@media (min-width: 1600px) {
+    .grid-container > * {
+        flex-basis: 20%;
+        box-sizing: border-box;
+    }
+}
