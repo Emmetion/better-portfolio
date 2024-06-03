@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, useAnimation, useInView, useScroll } from "framer-motion";
-import { Col, Row } from "reactstrap";
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import EmmetPfp from '../../../assets/Emmet_Pfp.jpg'
 import RITLogo from '../../../assets/RIT-Logo.png'
-import './Introduction.css';
 import SideFadeOut from './SideFadeOut'
+import './Introduction.css';
 
 export default function Introduction() {
 
@@ -14,35 +13,28 @@ export default function Introduction() {
 
     useEffect(() => {
         controls.start(isInView ? 'visible': 'hidden')
-    }, [isInView])
+    }, [isInView, controls])
 
     return (
         <div>
-            <div className="align-items-center justify-content-center d-flex fd-row vw-10" style={{backgroundColor: "white", height: "105vh"}}>
+            <div className="align-items-center justify-content-center d-flex fd-row vw-10 main-scene">
                 <SideFadeOut amount={.6} direction={-1}>
                     <div style={{minWidth: "480px"}}>
                         <span className="header-text">Hey There!</span>
                         <p className="body-text" style={{marginBottom: "0px"}}>I'm Emmet, a passionate software developer pursuing a </p>
                         <p className="body-text"> <b>Bachelor of Science</b> in <b>Software Engineering</b> @{' '}
                             <motion.a 
+                                className="rit-hover"
                                 whileHover={{
-                                            backgroundColor: "#FFA500", 
-                                            borderColor: "#FFA500", 
-                                            borderWidth: "5px", 
-                                            color: "white"
-                                            }}
-                                
-                                style={{
-                                    textDecoration: "none",
-                                    color: "black",
-                                    borderRadius: "10px",
-                                    borderStyle: "solid",
-                                    borderColor: "white",
-                                    transition: "border-width 0s, border-width 0s, border-color 0s, background-color 0s" // Adding transition properties here
+                                    backgroundColor: "#FFA500", 
+                                    borderColor: "#FFA500", 
+                                    borderWidth: "5px", 
+                                    color: "white" // Change the color to white
                                 }}
                                 transition={{
                                     backgroundColor: { duration: 0 },
                                     borderColor: { duration: 0 },
+                                    color: { duration: 0 } // Add color transition
                                 }}
                                 initial={{
                                     borderWidth: "0px"
@@ -50,10 +42,12 @@ export default function Introduction() {
                                 exit={{
                                     borderWidth: "0px",
                                     borderStyle: "none",
+                                    color: "black",
+                                    transition: { duration: 0 } // Add transition for color property
                                 }}
                                 href="http://rit.edu"
                                 target="_blank">
-                                <img src={RITLogo} style={{width: "30px", height: "30px", marginRight: "3px", marginBottom: "2px"}}/>RIT!
+                                <img alt="RIT Logo" src={RITLogo} className="rit-logo"/>RIT!
                             </motion.a>
                         </p>   
                         <p className="body-text" style={{marginBottom: "0px"}}>This website serves as a portfolio of accomplishments</p>
@@ -66,15 +60,9 @@ export default function Introduction() {
                         transition={{duration: 0.5}}
                         whileHover={{scale: 1.1}}
                     >
-                        <img src={EmmetPfp} style={{width: "300px", height: "300px", borderRadius: "10%"}} className="emmet-pfp"/>
+                        <img alt="Emmet's Profile" src={EmmetPfp} className="emmet-pfp"/>
                     </motion.div>
                 </SideFadeOut>
-                
-            </div>
-            <div style={{
-                textAlign: "center"
-            }}>
-
             </div>
         </div>
     )

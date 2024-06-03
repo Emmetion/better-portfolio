@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { frame, m, useAnimate, useAnimation, useScroll } from "framer-motion";
+import { useState } from "react";
 
 import './Technologies.css'
 
@@ -9,7 +8,7 @@ import FadeUp from "../FadeUp";
 import JavaIcon from '../../../assets/technologies/JavaIcon.webp'
 import SpringBoot from '../../../assets/technologies/SpringBoot.png'
 import JUnitIcon from '../../../assets/technologies/JUnit5.png'
-import MavenIcon from '../../../assets/technologies/MavenIcon.svg'
+// import MavenIcon from '../../../assets/technologies/MavenIcon.svg'
 import PythonIcon from '../../../assets/technologies/PythonIcon.png'
 import FlaskIcon from '../../../assets/technologies/FlaskIcon.png'
 import MatPlotLibIcon from '../../../assets/technologies/MatPlotLibIcon.png'
@@ -23,17 +22,14 @@ import STM32Icon from '../../../assets/technologies/STM32Icon.avif'
 import SQLIcon from '../../../assets/technologies/SQLIcon.png'
 import PostgresSQLIcon from '../../../assets/technologies/PostgreSQLIcon.png'
 import MySQLIcon from '../../../assets/technologies/MySQLIcon.png'
-
 import FileIcon from '../../../assets/technologies/FileIcon.png'
 import JacksonIcon from '../../../assets/technologies/JacksonIcon.webp'
 import CSVIcon from '../../../assets/technologies/CSVIcon.png'
-
+// End
 
 import { FaComputer } from "react-icons/fa6";
 
-import Icon from "./icon/Icon";
 import React from "react";
-import { motion } from "framer-motion";
 import Lang from './lang/Lang'
 
 const languages = [
@@ -157,51 +153,7 @@ const languages = [
 ]
 
 const Technologies = () => {
-    const [frameworks, setFrameworks] = useState([])
-    const [title, setTitle] = useState('');
     const [started, setStarted] = useState(false)
-
-    const controls = useAnimation()
-
-    const onTechClick = async (e) => {
-        if (title === e) {
-            return;
-        }
-        setTitle(e);
-        let tempFrame = languages.find(item => item.title === e)?.frameworks || []; // New list of Frameworks.
-        await console.start('exit');
-        setFrameworks(tempFrame);
-        await controls.start('reset');
-        await controls.start('open');
-    }
-
-    const variants = {
-        open: {
-            x: 0,
-            transition: {
-                type: "tween",
-                stiffness: 100,
-                duration: .5
-            },
-            opacity: 1,
-
-        },
-        closed: {
-            x: -400,   
-            opacity: 0 
-        },
-        exit: {
-            x: 400,
-            opacity: 0
-        },
-        reset: {
-            x: -400,
-            opacity: 0,
-            transition: {duration: 0.1}
-        }
-    }
-
-    let langCount = 0;
 
     return (
         <div className="d-block text-center" style={{
@@ -224,10 +176,9 @@ const Technologies = () => {
             </FadeUp >           
             <div className="mt-5 text-left ml-5 h1">
                 <div className="grid-container justify-content-center">
-                    { languages.map(lang => {
-                        langCount++;
+                    { languages.map((lang, index) => {
                         return (
-                        <FadeUp bottomMargin={"0px"} setStarted={setStarted} started={started} delay={langCount * 0.2}>
+                        <FadeUp bottomMargin={"0px"} setStarted={setStarted} started={started} delay={index * 0.2}>
                             <Lang lang={lang} key={lang.title}/>
                         </FadeUp>
                         )

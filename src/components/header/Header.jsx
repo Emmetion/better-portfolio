@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Collapse, Button, NavbarToggler } from "reactstrap";
-import { FaCodepen, FaGithub, FaLinkedin } from "react-icons/fa";
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Collapse, NavbarToggler } from "reactstrap";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiCode, HiDocumentText } from "react-icons/hi";
 
 import "./Header.css";
-import { FaCodeBranch, FaCodeMerge } from "react-icons/fa6";
 
 function Header() {
 

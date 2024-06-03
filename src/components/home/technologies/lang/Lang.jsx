@@ -1,18 +1,11 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import Icon from "../icon/Icon"
-import { motion, MotionConfig, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 // Represents a Stack in the Technologies section. The top icon is the languagage
 const Lang = ({lang}) => {
-    
     const [isOpen, setIsOpen] = useState(false);
-    const ref = useRef(null);
 
     const controls = useAnimation();
-
-    useEffect(() => {
-        const variant = getContainerVariant();
-        controls.start(isOpen ? variant : "hidden");
-    }, [isOpen, controls]);
 
     const onTechnologyClick = () => {
         setIsOpen(!isOpen); // Toggler
@@ -37,17 +30,17 @@ const Lang = ({lang}) => {
         }
     }
 
-    const getContainerVariant = () => {
+    const getContainerVariant = useCallback(() => {
         if (lang.frameworks.length === 1) {
             return "showingOne";
-        } else if (lang.frameworks.length == 2) {
+        } else if (lang.frameworks.length === 2) {
             return "showingTwo";
         } else if (lang.frameworks.length >= 3) {
             return "showingThree";
         } else {
             return "hidden";
         }
-    };
+    }, [lang.frameworks.length]);
 
     const frameworkVariants = {
         hidden: { y: "-120px", opacity: 0, transition: { type: "tween", duration: 0.3 } },
@@ -55,6 +48,11 @@ const Lang = ({lang}) => {
         showingTwo: { y: "0px", opacity: 1, transition: { type: "tween", duration: 0.7 } },
         showingThree: { y: "0px", opacity: 1, transition: { type: "tween", duration: 0.7 } }
     }
+
+    useEffect(() => {
+        const variant = getContainerVariant();
+        controls.start(isOpen ? variant : "hidden");
+    }, [isOpen, controls, getContainerVariant]);
 
     return (
         <motion.div style={{
@@ -66,7 +64,8 @@ const Lang = ({lang}) => {
             initial="hidden"
             variants={containerVariants}
             custom={getContainerVariant()}>
-            <div style={{zIndex: "1", position: "relative",
+            <div style={{
+                zIndex: "1", 
                 position: "relative", // Ensure the parent has a relative position
                 display: "flex", // Use flexbox
                 flexDirection: "column", // Arrange children in a column

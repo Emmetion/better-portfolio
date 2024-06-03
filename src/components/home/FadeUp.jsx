@@ -1,16 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useInView, useAnimate, MotionConfig, DragControls, useAnimation } from "framer-motion";
+import { useInView, useAnimation } from "framer-motion";
 
 const FadeUp = ({children, bottomMargin, delay, started, setStarted}) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, {margin: bottomMargin != undefined ? "0px 0px " + bottomMargin : "", once: true})
+    const isInView = useInView(ref, {margin: bottomMargin !== undefined ? "0px 0px " + bottomMargin : "", once: true})
     const controls = useAnimation();
     
     useEffect(() => {
         if (isInView || started) {
             controls.start('visible')
-            if (setStarted != undefined && started == false) {
+            if (setStarted !== undefined && started === false) {
                 setStarted(true);
             }
         } else {
@@ -23,7 +23,7 @@ const FadeUp = ({children, bottomMargin, delay, started, setStarted}) => {
         if (started) {
             controls.start("visible");
         }
-    }, [started]);
+    }, [started, controls]);
 
     const variants = {
         visible: {

@@ -1,4 +1,4 @@
-import { MotionConfig, useAnimation, useInView } from "framer-motion";
+import { useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion";
 const SideFadeOut = ({children, amount, direction, style}) => {
@@ -18,9 +18,8 @@ const SideFadeOut = ({children, amount, direction, style}) => {
     }
 
     useEffect(() => {
-        console.log(isInView)
         controls.start(isInView ? "visible" : "hidden");
-    }, [isInView]);
+    }, [isInView, controls]);
 
 
     return (<motion.div
