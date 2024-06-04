@@ -24,7 +24,7 @@
 
 .rit-hover {
     text-decoration: none  !important;
-    color: black; 
+    color: black !important; 
     border-radius: 10px;
     border-style: solid;
     border-color: white;
@@ -32,7 +32,7 @@
 }
 
 .rit-hover:hover {
-    color: white
+    color: white !important;
 }
 
 .rit-hover:active {

@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import FadeUp from '../FadeUp'
+import React, { useRef } from "react";
+
+import './Projects.css'
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 const Proj = ({item}) => {
     return (
@@ -15,16 +19,19 @@ const Proj = ({item}) => {
             justifyContent: "center",
             alignItems: "center",
             borderRadius: "10px",
-}}>
+            inlineSize: "block",
+            marginRight: "auto"
+        }}>
             <h1>{item.title}</h1>
             <div style={{
                 paddingLeft: "50px",
                 paddingRight: "50px",
+                textWrap: "wrap"
             }}>
                 <p>{item.description}</p>
             </div>
 
-            <ReactPlayer url={item.demoVideo} controls />
+            <ReactPlayer url={item.demoVideo} controls style={{borderRadius: "10px"}}/>
         </div>
     )
 }
@@ -48,6 +55,16 @@ const projects = [
 
 export default function Projects() {
 
+    const slideLeft = () => {
+        var slider = document.getElementById('slider');
+        slider.scrollLeft = slider.scrollLeft - 500;
+    };
+
+    const slideRight = () => {
+        var slider = document.getElementById('slider');
+        slider.scrollLeft = slider.scrollLeft + 500;
+    };
+
     return (
         <div style={{width: "100%", height: "100vh", backgroundColor: "white"}}> 
             <motion.h1 style={{paddingTop: "50px", textAlign: "center"}}>
@@ -55,20 +72,25 @@ export default function Projects() {
                     <p>Projects</p>
                 </FadeUp>
             </motion.h1>
-
-
             {/* List of Project Cards */}
             <div style={{
                 alignContent: "center",
                 justifyContent: "center",
                 display: "flex",
                 gap: "50px",
+
             }}>
-                {projects.map((item, index) => {
-                    return (
-                        <Proj item={item} key={index}/>
-                    )
-                })}
+                <div className='slider-window'>
+                    <MdChevronLeft onClick={slideLeft} style={{fontSize: "50px", cursor: "pointer", marginLeft: "20vw"}}/>
+                    <div id="slider" className='slider d-flex flex-row mt-4'>
+                        {projects.map((item, index) => {
+                            return (
+                                <Proj item={item} key={index}/>
+                            )
+                        })}
+                    </div>
+                    <MdChevronRight onClick={slideRight} style={{fontSize: "50px", cursor: "pointer", marginRight: "20vw"}}/>
+                </div>
             </div>
         </div>
     )

@@ -21,23 +21,23 @@ function Header() {
         <Nav className="ms-auto" navbar>
           <NavItem>
             <NavLink target="_blank" href="https://www.linkedin.com/in/emmet-spencer/" className="link">
-              <FaLinkedin className="mb-1"/>{' '}LinkedIn
+              <FaLinkedin className="mb-1" size={20}/>{' '}LinkedIn
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink target="_blank" href="https://github.com/Emmetion" className="link">
-              <FaGithub className="mb-1"/>{' '}GitHub
+              <FaGithub className="mb-1" size={20}/>{' '}GitHub
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink target="_blank" href="https://drive.google.com/file/d/1Sm8XceBqsT1B2fJGOyyP-1ssVjwtqioI/view?usp=drive_link" className="link">
-              <HiDocumentText className="mb-1"/>{' '}Resume
+              <HiDocumentText className="mb-1" size={20}/>{' '}Resume
             </NavLink>
           </NavItem>
         </Nav>
       </Collapse>
       <NavLink target="_blank" href="https://github.com/Emmetion/better-portfolio" className="link">
-        <HiCode className="mb-1"/>{' '}Code
+        <HiCode style={{marginBottom: "2px"}}size={22}/>{' '}Code
       </NavLink>
     </Navbar>
   );

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Form, FormGroup, Input, Label } from "reactstrap";
 
+import './Contact.css';
+
 export default function Contact() {
     const defaultFormState = {
         name: "",
@@ -23,45 +25,24 @@ export default function Contact() {
     }, [formState])
 
     return (
-        <div style={{
-            backgroundColor: "#E7E7E7",
-            height: "100vh",
-            width: "100%",
-            display: "flex",
-            flexDirection: "column"
-        }}>
-            <h1 style={{
-                paddingTop: "50px",
-                textAlign: "center",
-            }}>Contact</h1>
-
-            <Form>
-                <FormGroup floating>
-                    <Input defaultValue={formState.name} id="name" placeholder="Name" name="name" type="text" onChange={(e) => updateForm(e)}/>
-                    <Label for="name">Name</Label>
-                </FormGroup>
-                <FormGroup floating>
-                    <Input defaultValue={formState.email} placeholder="example@gmail.com" id="email" type="email" onChange={(e) => updateForm(e)}/>
-                    <Label for="email">Email</Label>
-                </FormGroup>
-                <FormGroup floating>
-                    <Input defaultValue={formState.message} placeholder="..." type="text" id="message" onChange={(e) => updateForm(e)}/>
-                    <Label for="message">Message</Label>
-                </FormGroup>
-                <FormGroup floating>
-                    <Input
-                        id="exampleEmail"
-                        name="email"
-                        placeholder="Email"
-                        type="email"
-                    />
-                    <Label for="exampleEmail">
-                        Email
-                    </Label>
-                </FormGroup>
-                {' '}
-            </Form>
-
+        <div className='contact-scene'>
+            <h1 className='title'>Contact</h1>
+            <div className='form'>
+                <Form>
+                    <FormGroup>
+                        <Input defaultValue={formState.name} id="name" placeholder="Name" name="name" type="text" onChange={(e) => updateForm(e)} className="input-field" />
+                        <Label for="name">Name</Label>
+                    </FormGroup>
+                    <FormGroup>
+                        <Input defaultValue={formState.email} placeholder="example@gmail.com" id="email" type="email" onChange={(e) => updateForm(e)} className="input-field" />
+                        <Label for="email">Email</Label>
+                    </FormGroup>
+                    <FormGroup>
+                        <Input defaultValue={formState.message} placeholder="..." type="text" id="message" onChange={(e) => updateForm(e)} className="input-field" />
+                        <Label for="message">Message</Label>
+                    </FormGroup>
+                </Form>
+            </div>
         </div>
     )
 }

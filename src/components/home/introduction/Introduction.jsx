@@ -18,7 +18,7 @@ export default function Introduction() {
     return (
         <div>
             <div className="align-items-center justify-content-center d-flex fd-row vw-10 main-scene">
-                <SideFadeOut amount={.6} direction={-1}>
+                <SideFadeOut amount={.5} direction={-1}>
                     <div style={{minWidth: "480px"}}>
                         <span className="header-text">Hey There!</span>
                         <p className="body-text" style={{marginBottom: "0px"}}>I'm Emmet, a passionate software developer pursuing a </p>
@@ -29,12 +29,10 @@ export default function Introduction() {
                                     backgroundColor: "#FFA500", 
                                     borderColor: "#FFA500", 
                                     borderWidth: "5px", 
-                                    color: "white" // Change the color to white
                                 }}
                                 transition={{
                                     backgroundColor: { duration: 0 },
                                     borderColor: { duration: 0 },
-                                    color: { duration: 0 } // Add color transition
                                 }}
                                 initial={{
                                     borderWidth: "0px"
@@ -42,8 +40,6 @@ export default function Introduction() {
                                 exit={{
                                     borderWidth: "0px",
                                     borderStyle: "none",
-                                    color: "black",
-                                    transition: { duration: 0 } // Add transition for color property
                                 }}
                                 href="http://rit.edu"
                                 target="_blank">
@@ -54,9 +50,9 @@ export default function Introduction() {
                         <p className="body-text">and other stuff I've made over my software journey.</p>
                     </div>
                 </SideFadeOut>
-                <SideFadeOut amount={.6} direction={1}>
+                <SideFadeOut amount={.5} direction={1}>
                     <motion.div
-                        animate={{x: 0, opacity: 1}}
+                        animate={{opacity: 1}}
                         transition={{duration: 0.5}}
                         whileHover={{scale: 1.1}}
                     >
