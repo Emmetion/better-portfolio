@@ -4,14 +4,17 @@
 }
 
 .header-text {
-    font-size: 50px;
+    font-size: 70px;
     width: 100%;
+    font-family: Open Sans;
+    font-weight: 600;
 }
 
 .body-text {
     font-size: 18px;
     width: 100%;
     text-overflow: clip;
+    font-family: Roboto Slab
 }
 
 .emmet-pfp {

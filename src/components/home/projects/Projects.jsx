@@ -33,15 +33,21 @@ const projects = [
     {
         title: "STM32 Mini-Player Project",
         description: "This project utilized a microcontroller to create a mini music player. There were two forms of inputs implemented, one being a terminal interface, and the other being a physical button interface. The music was played through a square buzzer located on a connected breadboard. This project helped gather understnaindg",
-        demoVideo: "https://www.youtube.com/watch?v=6lTjV7rV2Zg"
+        demoVideo: "https://www.youtube.com/watch?v=U6mSkunXqNc"
     },
     {
         title: "NUTRiAPP Application",
         description: "Group project in my Software Engineering class. Our goal was to build a nutritional application using JavaFX, and implementing various design patterns to understand how they're incoorportated a design document. Developed thorough understanding of the process from Design Document to MVP.",
-        demoVideo: "https://www.youtube.com/watch?v=Xxa8UBh72EM"
+        demoVideo: "https://www.youtube.com/watch?v=Xxa8UBh72EM",
+        language: "Java",
+        libraries: "JavaFX, Maven, JUnit, Mockito, Git, "
     }, {
         title: "Personal Portfolio",
-        description: "This project was created to highlight my experiences and projects. Built using React, Framer Motion, and Reactstrap. This serves to highlight my knowledge of web-development frameworks and technologies.",
+        description: "Personal project showcasing my understanding of the React Framework and other libraries like Framer Motion.",
+        demoVideo: "https://www.youtube.com/watch?v=6lTjV7rV2Zg"
+    }, {
+        title: "RapidTransfer",
+        description: "This was a Hackathon Project. Our goal was to create an application that allows for file-transfers to occur through a terminal, via friend-codes. Our main-priority of the project was to learn a new language, not so much win an award. The application was written in Golang and utilized various libraries as well as Google Cloud.",
         demoVideo: "https://www.youtube.com/watch?v=6lTjV7rV2Zg"
     }
 ]
@@ -49,9 +55,10 @@ const projects = [
 export default function Projects() {
     return (
         <div className='projects-container'> 
+
             <FadeUp>
                 <div className='projects-container-title'>
-                    <VscVscode size={40} style={{marginTop: "5px"}}/>
+                    <VscVscode size={40} style={{marginTop: "7px"}}/>
                     <h1>Projects</h1>
                 </div>
             </FadeUp>

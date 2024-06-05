@@ -1,7 +1,7 @@
 .projects-container {
     width: 100%;
     min-height: 100vh;
-    max-height: 300vh;
+    max-height: 500vh;
     background-color: white;
 }
 
@@ -12,6 +12,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-family: JetBrains Mono;
+    font-weight: bold;
 }
 
 .project-format {
@@ -60,7 +62,7 @@
 }
 .project-title {
     margin-top: 20px;
-}
+} 
 
 .project-description {
     padding-left: 50px;
