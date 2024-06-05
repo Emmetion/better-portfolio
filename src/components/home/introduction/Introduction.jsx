@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import EmmetPfp from '../../../assets/Emmet_Pfp.jpg'
 import RITLogo from '../../../assets/RIT-Logo.png'
-import SideFadeOut from './SideFadeOut'
+import SideFadeOut from '../SideFadeOut'
 import './Introduction.css';
 
 export default function Introduction() {

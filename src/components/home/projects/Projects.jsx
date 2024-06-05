@@ -1,10 +1,9 @@
-import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import FadeUp from '../FadeUp'
 import React from "react";
 
 import './Projects.css'
-import { FaBoxOpen } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
 
 const Proj = ({item}) => {
     return (
@@ -52,7 +51,7 @@ export default function Projects() {
         <div className='projects-container'> 
             <FadeUp>
                 <div className='projects-container-title'>
-                    <FaBoxOpen size={40}/>
+                    <VscVscode size={40} style={{marginTop: "5px"}}/>
                     <h1>Projects</h1>
                 </div>
             </FadeUp>

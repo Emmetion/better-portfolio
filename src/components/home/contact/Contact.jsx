@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
 import './Contact.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ReCAPTCHA from 'react-google-recaptcha';
+import axios from 'axios';
 
 export default function Contact() {
     const formSparkUrl = 'https://submit-form.com/o9VErebzy';
@@ -13,15 +14,15 @@ export default function Contact() {
     const ref = useRef(null);
     const [recaptchaToken, setRecaptchaToken] = useState('');
 
-    const [formState, setFormState] = useState({
+    const initialFormState = {
         name: '',
         email: '',
         message: '',
-        error: '' // Current Error Message of Form.
-    });
+    }
+    const [message, setMessage] = useState();
+    const [formState, setFormState] = useState(initialFormState);
 
     const updateForm = (e) => {
-        console.log(e)
         setFormState({
             ...formState,
             [e.target.id]: e.target.value
@@ -38,29 +39,65 @@ export default function Contact() {
             ref.current.style.height = `${ref.current.scrollHeight}px`;
         }
     };
+
+    const validateEmail = (email) => {
+        return String(email)
+          .toLowerCase()
+          .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          );
+    };
+
     const validateForm = () => {
-        if (formState.name === '' || formState.email === '' || formState.message === '') {
+        if (formState.name === '' || formState.email === '' || formState.message === '' || recaptchaToken === '') {
             return false;
         }
         return true;
     }
 
-    const submitForm = () => {
-        console.log(formState);
-
+    const submitForm = async () => {
         if (!validateForm()) {
+            if (recaptchaToken === '') {
+                setMessage({
+                    message: "You must complete ReCAPTCHA before submitting.",
+                    class: "bg-warning"
+                })  
+                return;
+            }
+            setMessage({
+                message: "You must fill out all fields prior to submitting.",
+                class: "bg-warning"
+            })
             return;
         }
-        fetch(formSparkUrl).then((response) => {
-            if (response.status === 200) {
-                setFormState({
-                    name: '',
-                    email: '',
-                    message: '',
-                    error: ''
-                });
-            }
-        });
+
+        if (!validateEmail(formState.email)) {
+            setMessage({
+                message: "You must provide a valid email before submitting.",
+                class: "bg-warning"
+            })
+            return;
+        }
+
+        const payload = {
+            ...formState,
+            "g-recaptcha-response": recaptchaToken,
+        };
+        try {
+            await axios.post(formSparkUrl, payload);
+            setFormState(initialFormState);
+            recaptchaRef.current.reset();
+            setMessage({
+                message: "Success! I will get back to you shortly!",
+                class: "bg-success"
+            })
+        } catch (error) {
+            setMessage({
+                message: "There was an sending your message. :(",
+                class: "bg-danger"
+            })
+        }
+        
     }
 
     const updateRecaptchaToken = (token) => {   
@@ -71,6 +108,21 @@ export default function Contact() {
         <div className='contact-scene'>
             <div className='contact-section'>
                 <h1 className='title'>Contact Me</h1>
+                { message && (
+                    <div style={{
+                        width: "76%",
+                        minHeight: "30px",
+                        maxHeight: "60px",
+                        textAlign: "center",
+                        textWrap: "wrap",
+                        color: "white",
+                        margin: "auto",
+                        borderRadius: "5px",
+                        marginBottom: "10px"
+                    }} className={message.class}>
+                        {message.message}
+                    </div>
+                )}
                 <div className='form'>
                     <Form className='form'>
                         <FormGroup floating>
@@ -110,17 +162,22 @@ export default function Contact() {
                         </FormGroup>
                     </Form>
                     <div style={{
-                        width: "70%",
-                        paddingBottom: "20px"
+                        alignItems: "center",
+                        justifyContent: "center"
                     }}>
                         <ReCAPTCHA 
                             ref={recaptchaRef}
                             sitekey={recaptchaKey}  
                             onChange={updateRecaptchaToken}  
                         />
+                    </div>
+                    <div style={{
+                        width: "70%",
+                        paddingBottom: "20px",
+                        marginTop: "5px"
+                    }}>
                         <Button color='success' block={true} onClick={() => {submitForm()}}>Submit</Button>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -14,8 +14,7 @@ const FadeUp = ({children, bottomMargin, delay, started, setStarted}) => {
                 setStarted(true);
             }
         } else {
-            console.log("hidden")
-          controls.start('hidden')
+            controls.start('hidden')
         }
     }, [isInView, controls, started, setStarted]); 
     
