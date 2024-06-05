@@ -1,37 +1,31 @@
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import FadeUp from '../FadeUp'
-import React, { useRef } from "react";
+import React from "react";
 
 import './Projects.css'
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { FaBoxOpen } from "react-icons/fa";
 
 const Proj = ({item}) => {
     return (
-        <div style={{
-            height: "500px",
-            width: "700px",
-            borderColor: "black",
-            borderStyle: "solid",
-            borderWidth: "1px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "10px",
-            inlineSize: "block",
-            marginRight: "auto"
-        }}>
-            <h1>{item.title}</h1>
-            <div style={{
-                paddingLeft: "50px",
-                paddingRight: "50px",
-                textWrap: "wrap"
-            }}>
+        <div className="project-item">
+            <h1 className='project-title'>
+                <span>
+                    {item.title}
+                </span>
+            </h1>
+            <div className="project-description">
                 <p>{item.description}</p>
             </div>
-
-            <ReactPlayer url={item.demoVideo} controls style={{borderRadius: "10px"}}/>
+            <div className='project-player'>
+                <ReactPlayer 
+                    width='90%'
+                    height='100%'
+                    url={item.demoVideo} 
+                    controls
+                />
+            </div>
+            <div style={{marginBottom: "20px"}}/>
         </div>
     )
 }
@@ -54,43 +48,25 @@ const projects = [
 ]
 
 export default function Projects() {
-
-    const slideLeft = () => {
-        var slider = document.getElementById('slider');
-        slider.scrollLeft = slider.scrollLeft - 500;
-    };
-
-    const slideRight = () => {
-        var slider = document.getElementById('slider');
-        slider.scrollLeft = slider.scrollLeft + 500;
-    };
-
     return (
-        <div style={{width: "100%", height: "100vh", backgroundColor: "white"}}> 
-            <motion.h1 style={{paddingTop: "50px", textAlign: "center"}}>
-                <FadeUp>
-                    <p>Projects</p>
-                </FadeUp>
-            </motion.h1>
-            {/* List of Project Cards */}
-            <div style={{
-                alignContent: "center",
-                justifyContent: "center",
-                display: "flex",
-                gap: "50px",
-
-            }}>
-                <div className='slider-window'>
-                    <MdChevronLeft onClick={slideLeft} style={{fontSize: "50px", cursor: "pointer", marginLeft: "20vw"}}/>
-                    <div id="slider" className='slider d-flex flex-row mt-4'>
-                        {projects.map((item, index) => {
-                            return (
-                                <Proj item={item} key={index}/>
-                            )
-                        })}
-                    </div>
-                    <MdChevronRight onClick={slideRight} style={{fontSize: "50px", cursor: "pointer", marginRight: "20vw"}}/>
+        <div className='projects-container'> 
+            <FadeUp>
+                <div className='projects-container-title'>
+                    <FaBoxOpen size={40}/>
+                    <h1>Projects</h1>
                 </div>
+            </FadeUp>
+
+            <div className="project-format">
+                { 
+                    projects.map(item => {
+                        return (
+                            <div className='project-section'>
+                                <Proj item={item} key={item.title}/>
+                            </div>
+                        )
+                    }) 
+                }
             </div>
         </div>
     )

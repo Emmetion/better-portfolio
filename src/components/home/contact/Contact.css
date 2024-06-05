@@ -1,14 +1,28 @@
 .contact-scene {
     background-color: #E7E7E7;
-    height: 100vh;
+    height: 60vh;
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.contact-section {
+    background-color: white;
+    width: 400px;
+    margin-top: 50px;
 }
 
 .title {
-    padding-top: 50px;
+    padding-top: 25px;
     text-align: center;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .input-field {
@@ -16,6 +30,12 @@
     margin: 0 auto;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #000000;
+    background-color: white;
 }
 
+.resizeable {
+    max-height: 300px !important;
+    min-height: 175px !important;
+    resize: none;
+    overflow-y: auto; 
+}

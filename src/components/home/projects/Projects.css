@@ -1,29 +1,76 @@
-.slider-window {
-    overflow-y: hidden;
-    position: relative;
-    display: flex;
-    justify-items: center;
+.projects-container {
+    width: 100%;
+    min-height: 100vh;
+    max-height: 300vh;
+    background-color: white;
 }
 
-/* .slider {
+
+.projects-container-title {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.project-format {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-section {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+@media (max-width: 1650) {
+    .project-section {
+        flex-basis: 100%;
+    }
+}
+
+.project-item {
+    height: 600px;
+    max-height: 700px;
+    min-width: 700px;
+    max-width: 700px;
+    background-color: #e7e7e7;
+    border-color: #e7e7e7;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    inline-size: block;
+    margin-top: 50px;
+}
+.project-title {
+    margin-top: 20px;
+}
+
+.project-description {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-wrap: wrap
+}
+
+.project-player {
     width: 100%;
     height: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    flex-direction: row;
-    gap: 40px;
-    overflow-x: scroll
-} */
-
-.slider {
-    width: 100%; 
-    height: 100%; 
-    overflow-x: scroll;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    scrollbar-width: none; 
-    scrollbar-width: 10px;
+    justify-content: center;
     display: flex;
 }
