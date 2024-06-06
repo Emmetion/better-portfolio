@@ -3,6 +3,7 @@
     min-height: 100vh;
     max-height: 500vh;
     background-color: white;
+
 }
 
 
@@ -12,8 +13,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-family: JetBrains Mono;
-    font-weight: bold;
+    font-family: Nunito Sans;
+    font-weight: 700;
 }
 
 .project-format {
@@ -62,12 +63,16 @@
 }
 .project-title {
     margin-top: 20px;
+    font-family: Nunito Sans;
+
 } 
 
 .project-description {
     padding-left: 50px;
     padding-right: 50px;
-    text-wrap: wrap
+    text-wrap: wrap;
+    font-family: Nunito Sans;
+
 }
 
 .project-player {

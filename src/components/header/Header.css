@@ -1,6 +1,7 @@
 .link {
     color: white !important;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: Nunito Sans;
 }
 
 .custom-navbar {

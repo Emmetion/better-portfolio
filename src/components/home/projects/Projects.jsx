@@ -55,14 +55,15 @@ const projects = [
 export default function Projects() {
     return (
         <div className='projects-container'> 
-
             <FadeUp>
-                <div className='projects-container-title'>
-                    <VscVscode size={40} style={{marginTop: "7px"}}/>
-                    <h1>Projects</h1>
+                <div className="h1">
+                    <p className="header-text pb-2 pt-5 justify-content-center text-center"><VscVscode className="pb-2" size={50}/>Projects</p>
                 </div>
+                {/* <div className='projects-container-title'>
+                    <VscVscode size={40} style={{marginTop: "7px"}}/>
+                    <h1 className='header-text'>Projects</h1>
+                </div> */}
             </FadeUp>
-
             <div className="project-format">
                 { 
                     projects.map(item => {

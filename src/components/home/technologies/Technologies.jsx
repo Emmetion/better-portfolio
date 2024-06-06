@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import './Technologies.css'
 
@@ -26,10 +26,7 @@ import FileIcon from '../../../assets/technologies/FileIcon.png'
 import JacksonIcon from '../../../assets/technologies/JacksonIcon.webp'
 import CSVIcon from '../../../assets/technologies/CSVIcon.png'
 // End
-
 import { FaComputer } from "react-icons/fa6";
-
-import React from "react";
 import Lang from './lang/Lang'
 
 const languages = [

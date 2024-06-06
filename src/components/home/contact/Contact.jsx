@@ -83,6 +83,7 @@ export default function Contact() {
             ...formState,
             "g-recaptcha-response": recaptchaToken,
         };
+        
         try {
             await axios.post(formSparkUrl, payload);
             setFormState(initialFormState);
