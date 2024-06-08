@@ -3,7 +3,6 @@
     min-height: 100vh;
     max-height: 500vh;
     background-color: white;
-
 }
 
 
@@ -14,14 +13,15 @@
     flex-direction: row;
     justify-content: center;
     font-family: Nunito Sans;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .project-format {
     width: 100%;
     display: flex;
+    /* overflow-x: scroll; */
+    /* flex-wrap: nowrap;  */
     flex-direction: row;
-    flex-basis: 100%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -44,11 +44,16 @@
     }
 }
 
+/* .project-wrapper {
+    width: 50vw;
+} */
+
 .project-item {
     height: 600px;
-    max-height: 700px;
+    max-height: 900px;
     min-width: 700px;
     max-width: 700px;
+    width: 100vw;
     background-color: #e7e7e7;
     border-color: #e7e7e7;
     border-style: solid;

@@ -8,7 +8,7 @@ import FadeUp from "../FadeUp";
 import JavaIcon from '../../../assets/technologies/JavaIcon.webp'
 import SpringBoot from '../../../assets/technologies/SpringBoot.png'
 import JUnitIcon from '../../../assets/technologies/JUnit5.png'
-// import MavenIcon from '../../../assets/technologies/MavenIcon.svg'
+import MavenIcon from '../../../assets/technologies/MavenIcon.svg'
 import PythonIcon from '../../../assets/technologies/PythonIcon.png'
 import FlaskIcon from '../../../assets/technologies/FlaskIcon.png'
 import MatPlotLibIcon from '../../../assets/technologies/MatPlotLibIcon.png'
@@ -18,6 +18,7 @@ import JavaScriptIcon from '../../../assets/technologies/JavaScriptIcon.svg'
 import ReactIcon from '../../../assets/technologies/ReactIcon.png'
 import AngularIcon from '../../../assets/technologies/AngularIcon.png'
 import CIcon from '../../../assets/technologies/CIcon.png'
+import GolangIcon from '../../../assets/technologies/Go-Logo_Blue.svg'
 import STM32Icon from '../../../assets/technologies/STM32Icon.avif'
 import SQLIcon from '../../../assets/technologies/SQLIcon.png'
 import PostgresSQLIcon from '../../../assets/technologies/PostgreSQLIcon.png'
@@ -34,7 +35,7 @@ const languages = [
         imageSrc: JavaIcon,
         title: "Java",
         yearsOfExperience: "3 Years",
-        description: "Java was the first programming languages I learned, and where I developed a fundamental grasp of programming itself.",
+        description: "The first programming languages I learned, and where I developed most of my programming mastery.",
         frameworks: [
             {
                 imageSrc: SpringBoot,
@@ -47,6 +48,12 @@ const languages = [
                 title: "JUnit 5",
                 yearsOfExperience: "~1 Year",
                 description: "Used in various projects of mine to cover Unit-Testing. Along with this application I frequently use Jacoco to analyze my code coverage.",
+            },
+            {
+                imageSrc: MavenIcon,
+                title: "Maven",
+                yearsOfExperience: "~2 Year",
+                description: "Majority of my Spigot Projets (Minecraft Plugins) utilized the Maven Platform to host and install a variaty of dependencies. A lot of my experience in Java was through Maven, Gradle I have very limited experience with.",
             },
         ]
     },
@@ -83,13 +90,13 @@ const languages = [
         imageSrc: JavaScriptIcon,
         title: "JavaScript",
         yearsOfExperience: "~1 Year",
-        description: "Used in many projects of mine, mostly for front-end development. Developed Discord-bots with it, and many front-end interfaces.",
+        description: "Used in many projects of mine, mostly for front-end development. Created a variety of applications, including this Portfolio with JSX.",
         frameworks: [
             {
                 imageSrc: AngularIcon,
                 title: "AngularJS",
                 yearsOfExperience: "~1/2 Year",
-                description: "Developed several front-end applications with this software, combined with SpringBoot in some of my university projects."
+                description: "Developed a few front-end applications with this framework, combined with SpringBoot in one of my university projects."
             },
             {
                 imageSrc: ReactIcon,
@@ -108,8 +115,14 @@ const languages = [
             imageSrc: STM32Icon,
             title: "STM32 ",
             yearsOfExperience: "~1/2 Year",
-            description: "Created a MicroController application that acted as a basic audio Mini-Player. Providing controls for both a remote and physical user. See projects below. "
+            description: "Created a MicroController application that acted as a basic audio Mini-Player. Providing controls for both a remote and physical user. See projects below."
         }]
+    },{
+        imageSrc: GolangIcon,
+        title: "Golang",
+        yearsOfExperience: "~1 Month",
+        description: "Language I learned over the course of a hackathon. Found the error really and return statements really unique in this language. Had a fun experience with it.",
+        frameworks: []
     },
     {
         imageSrc: SQLIcon,
@@ -125,7 +138,7 @@ const languages = [
             imageSrc: MySQLIcon,
             title: "MySQL",
             yearsOfExperience: "1 Year",
-            description: ""
+            description: "Similar experience with Postgres. Developed a lot of Spigot plugins utilizing MySQL queries for database management."
         }]
     },{
         imageSrc: FileIcon,
