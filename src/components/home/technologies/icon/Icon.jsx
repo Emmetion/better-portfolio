@@ -63,7 +63,6 @@ const Icon = ({imageSrc, title, yearsOfExperience, description, style, onClick, 
                     {primary === true ? "Click to view frameworks..." : ""}
                 </div>
             </motion.div>
-            
         </div>
     )
 }

@@ -15,16 +15,13 @@
 }
 
 
+#icon-item {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 @media (max-width: 500px) {
     #icon-container {
         width: 100vw !important;
     }
-
-    #icon-item {
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
 }
-/* .lang-item * {
-    cursor: auto;
-} */
