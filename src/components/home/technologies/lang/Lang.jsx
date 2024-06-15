@@ -55,11 +55,13 @@ const Lang = ({lang}) => {
     }, [isOpen, controls, getContainerVariant]);
 
     return (
+        <div style={{
+            marginLeft: "auto",
+            marginRight: "auto",
+        }}>
         <motion.div style={{
-            minWidth: "340px",
             height: "70vh",
-            alignItems: "center" // Center horizontally
-            }}
+        }}
             animate={controls}
             initial="hidden"
             variants={containerVariants}
@@ -71,6 +73,7 @@ const Lang = ({lang}) => {
                 flexDirection: "column", // Arrange children in a column
                 justifyContent: "center", // Center horizontally
                 width: "100%",
+
             }}>
                 <Icon onClick={onTechnologyClick}  key={lang.title} isOpen={isOpen} imageSrc={lang.imageSrc} description={lang.description} title={lang.title} yearsOfExperience={lang.yearsOfExperience} style={{}} primary={true}/>
             </div>
@@ -86,6 +89,7 @@ const Lang = ({lang}) => {
                 )} 
             </motion.div>
         </motion.div>
+        </div>
     )
 }
 

@@ -5,8 +5,11 @@ import "./Icon.css"
 
 const Icon = ({imageSrc, title, yearsOfExperience, description, style, onClick, primary, isOpen}) => {
     return (
-        <div>
-            <motion.div className="lang-item d-flex flex-column mr-2"
+        <div id='icon-container' style={{
+            marginLeft: "auto",
+            marginRight: "auto",
+        }}>
+            <motion.div id='icon-item' className="lang-item d-flex flex-column mr-2"
                 layout
                 onClick={() => onClick()}
                 whileHover={() => {

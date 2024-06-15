@@ -50,11 +50,7 @@
 }
 
 /* Hide profile picture and adjust text on mobile views */
-@media (max-width: 768px) {
-    .emmet-pfp {
-        display: none;
-    }
-
+@media (max-width: 375px) {
     .text-container {
         text-align: center;
     }
@@ -63,7 +59,18 @@
         margin: 0 auto;
     }
 
-    div {
-        min-width: none;
+    .body-text {
+        width: 100% !important;
+        display: inline;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .header-text {
+        margin-top: 5px;        
+    }
+
+    .emmet-pfp {
+        display: none;
     }
 }

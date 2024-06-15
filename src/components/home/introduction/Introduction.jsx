@@ -8,7 +8,7 @@ import './Introduction.css';
 export default function Introduction() {
 
     const ref = useRef(null);
-    const isInView = useInView(ref, {margin: "0 0 -200px"})
+    const isInView = useInView(ref, {margin: "0 0 -100px"})
     const controls = useAnimation()
 
     useEffect(() => {
@@ -17,12 +17,13 @@ export default function Introduction() {
 
     return (
         <div>
-            <div className="align-items-center justify-content-center d-flex fd-row vw-10 main-scene">
-                <SideFadeOut amount={.5} direction={-1}>
-                    <div style={{minWidth: "480px"}}>
+            <div id='introduction' className="align-items-center justify-content-center d-flex fd-row vw-10 main-scene">
+                <SideFadeOut amount={.2} direction={-1}>
+                    <div id='intro-text'>
                         <span className="header-text">Hey There!</span>
-                        <p className="body-text" style={{marginBottom: "0px"}}>I'm Emmet, a passionate software developer pursuing a </p>
-                        <p className="body-text"> <b>Bachelor of Science</b> in <b>Software Engineering</b> @{' '}
+                        <br/>
+                        <p className="body-text" style={{marginBottom: "0px"}}>I'm Emmet, a passionate software developer pursuing a</p>
+                        <p className="body-text"><b>Bachelor of Science</b> in <b>Software Engineering</b> @{' '}
                             <motion.a 
                                 className="rit-hover"
                                 whileHover={{
@@ -55,6 +56,7 @@ export default function Introduction() {
                         animate={{opacity: 1}}
                         transition={{duration: 0.5}}
                         whileHover={{scale: 1.1}}
+                        id='intro-pfp'
                     >
                         <img alt="Emmet's Profile" src={EmmetPfp} className="emmet-pfp"/>
                     </motion.div>

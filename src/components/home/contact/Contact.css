@@ -16,6 +16,17 @@
     border-radius: 5px;
 }
 
+@media (max-width: 380px) {
+    .contact-section {
+        width: 300px;
+    }
+
+    .input-field {
+        width: 250px !important;
+    }
+
+}
+
 .title {
     padding-top: 25px;
     text-align: center;
@@ -30,7 +41,7 @@
 }
 
 .input-field {
-    width: 305px !important;
+    width: 305px;
     margin: 0 auto;
     padding: 10px;
     border-radius: 5px;

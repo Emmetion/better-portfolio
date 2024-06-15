@@ -179,13 +179,13 @@ const Technologies = () => {
             </FadeUp>
             <FadeUp bottomMargin="-50px" direction={-1}>
                 <div className="body-text w-100">
-                    <p className="mb-0">Over the course of my career, I've developed many strong skills</p>
-                    <p className="mb-0">in various programming lanauges, softwares, and frameworks alike.</p>
-                    <p className="mb-0">Here I'll highlight some of my greatest experiences.</p>
+                    <p className="mb-0" id='text-text'>Over the course of my career, I've developed many strong skills</p>
+                    <p className="mb-0" id='text-text'>in various programming lanauges, softwares, and frameworks alike.</p>
+                    <p className="mb-0" id='text-text'>Here I'll highlight some of my greatest experiences.</p>
                 </div> 
             </FadeUp>           
-            <div className="mt-5 text-left ml-5 h1">
-                <div className="grid-container justify-content-center">
+            <div className="mt-5 text-left h1">
+                <div className="grid-container " style={{justifyItems: "center"}}>
                     { languages.map((lang, index) => {
                         return (
                         <FadeUp bottomMargin={"0px"} setStarted={setStarted} started={started} delay={index * 0.2}>
