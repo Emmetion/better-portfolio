@@ -39,7 +39,16 @@
 }
 
 
-@media (max-width: 375px) {
+@media (max-width: 800px) {
+    .project-item {
+        max-width: 600px !important;
+        min-width: 600px !important;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 4508px) {
 
     .project-format { 
         flex-wrap: wrap;
