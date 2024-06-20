@@ -39,7 +39,7 @@
 }
 
 
-@media (max-width: 730px) {
+@media (max-width: 375px) {
 
     .project-format { 
         flex-wrap: wrap;
