@@ -55,7 +55,7 @@ const Lang = ({lang}) => {
     }, [isOpen, controls, getContainerVariant]);
 
     return (
-        <div style={{
+        <div id='lang-section' style={{
             marginLeft: "auto",
             marginRight: "auto",
         }}>
@@ -73,7 +73,6 @@ const Lang = ({lang}) => {
                 flexDirection: "column", // Arrange children in a column
                 justifyContent: "center", // Center horizontally
                 width: "100%",
-
             }}>
                 <Icon onClick={onTechnologyClick}  key={lang.title} isOpen={isOpen} imageSrc={lang.imageSrc} description={lang.description} title={lang.title} yearsOfExperience={lang.yearsOfExperience} style={{}} primary={true}/>
             </div>
