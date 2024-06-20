@@ -1,6 +1,7 @@
 .main-scene {
     background-color: white;
     height: 105vh;
+    overflow-x: hidden !important;
 }
 
 .header-text {
