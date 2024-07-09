@@ -30,7 +30,7 @@ function Header() {
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink target="_blank" href="https://drive.google.com/file/d/1Sm8XceBqsT1B2fJGOyyP-1ssVjwtqioI/view?usp=drive_link" className="link">
+            <NavLink target="_blank" href="https://drive.google.com/file/d/1a9uznlbk2ZpZrAPst_fCJuNcXHHgNIf-/view?usp=sharing" className="link">
               <HiDocumentText className="mb-1" size={20}/>{' '}Resume
             </NavLink>
           </NavItem>

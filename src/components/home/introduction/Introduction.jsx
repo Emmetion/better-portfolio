@@ -19,7 +19,7 @@ export default function Introduction() {
         <div>
             <div id='introduction' className="align-items-center justify-content-center d-flex fd-row vw-10 main-scene">
                 <SideFadeOut amount={.2} direction={-1}>
-                    <div id='intro-text'>
+                    <div id='intro-text' style={{marginRight: "10px"}}>
                         <span className="header-text">Hey There!</span>
                         <br/>
                         <p className="body-text" style={{marginBottom: "0px"}}>I'm Emmet, a passionate software developer pursuing a</p>
@@ -56,7 +56,6 @@ export default function Introduction() {
                         animate={{opacity: 1}}
                         transition={{duration: 0.5}}
                         whileHover={{scale: 1.1}}
-                        id='intro-pfp'
                     >
                         <img alt="Emmet's Profile" src={EmmetPfp} className="emmet-pfp"/>
                     </motion.div>
