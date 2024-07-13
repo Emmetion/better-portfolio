@@ -3,11 +3,71 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+  redirect,
+  Navigate
+} from "react-router-dom";
+import Introduction from './components/home/introduction/Introduction';
+import Technologies from './components/home/technologies/Technologies';
+import Projects from './components/home/projects/Projects';
+import Header from './components/header/Header';
+import { NewHeader } from './components/newheader/NewHeader';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <Navigate to="/home"/>
+    ),
+  },
+  {
+    path: "/home",
+    element: (
+      <div>
+        <NewHeader/>
+        <Introduction/>
+      </div>
+    ),
+  },
+  {
+    path: "/technologies",
+    element: (
+      <div>
+        <Header/>
+        <Technologies/>
+      </div>
+    ),
+  },
+  {
+    path: "/projects",
+    element: (
+      <div>
+        <Header/>
+        <Projects/>
+      </div>
+    ),
+  },
+  {
+    path: "/contact",
+    element: (
+      <div>
+        <Header/>
+        <Projects/>
+      </div>
+    ),
+  },
+  
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
