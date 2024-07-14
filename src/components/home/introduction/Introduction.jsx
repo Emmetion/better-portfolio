@@ -1,23 +1,14 @@
-import { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import EmmetPfp from '../../../assets/Emmet_Pfp.jpg'
 import RITLogo from '../../../assets/RIT-Logo.png'
 import SideFadeOut from '../SideFadeOut'
 import './Introduction.css';
+import { FaCodeBranch, FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function Introduction() {
-
-    const ref = useRef(null);
-    const isInView = useInView(ref, {margin: "0 0 -100px"})
-    const controls = useAnimation()
-
-    useEffect(() => {
-        controls.start(isInView ? 'visible': 'hidden')
-    }, [isInView, controls])
-
     return (
-        <div>
-            <div id='introduction' className="align-items-center justify-content-center d-flex fd-row vw-10 main-scene">
+        <div className="main-scene" style={{paddingTop: "24vh"}}>
+            <div id='introduction' className="align-items-center justify-content-center d-flex fd-row vw-10">
                 <SideFadeOut amount={.2} direction={-1}>
                     <div id='intro-text' style={{marginRight: "10px"}}>
                         <span className="header-text">Hey There!</span>
@@ -49,16 +40,17 @@ export default function Introduction() {
                         </p>   
                         <p className="body-text" style={{marginBottom: "0px"}}>This website serves as a portfolio of accomplishments</p>
                         <p className="body-text">and other stuff I've made over my software journey.</p>
+                        <div className="m-1 d-flex flex-row gap-3">
+                            <FaLinkedin size={40} className="icon-hover"/>
+                            <FaGithub size={40} className="icon-hover"/>
+                            <FaCodeBranch size={40} className="icon-hover"/>
+                        </div>
                     </div>
                 </SideFadeOut>
                 <SideFadeOut amount={.5} direction={1}>
-                    <motion.div
-                        animate={{opacity: 1}}
-                        transition={{duration: 0.5}}
-                        whileHover={{scale: 1.1}}
-                    >
+                    <div>
                         <img alt="Emmet's Profile" src={EmmetPfp} className="emmet-pfp"/>
-                    </motion.div>
+                    </div>
                 </SideFadeOut>
             </div>
         </div>
