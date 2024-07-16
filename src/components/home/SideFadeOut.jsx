@@ -22,14 +22,14 @@ const SideFadeOut = ({children, amount, direction, style}) => {
     }, [isInView, controls]);
 
 
-    return (<motion.div
+    return (<div
         ref={ref}
         variants={variants}
         animate={controls}
         transition={{duration: 0.5}}
         style={style}>
             {children}
-    </motion.div>)
+    </div>)
 }
 
 export default SideFadeOut;
